@@ -1,0 +1,23 @@
+{
+  "name": "getFPS",
+  "ns": "engine",
+  "title": "Get fps",
+  "description": "Return the current calculated frames per second of the Engine.\n",
+  "phrases": {
+    "active": "Get fps"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+    },
+    "output": {
+      "number": {
+        "type": "number",
+        "title": "Number",
+        "description": "calculated fps"
+      }
+    }
+  }
+}

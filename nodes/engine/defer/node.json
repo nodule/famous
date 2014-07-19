@@ -1,0 +1,23 @@
+{
+  "name": "defer",
+  "ns": "engine",
+  "title": "Defer",
+  "description": "Queue a function to be executed sometime soon, at a time that is\n   unlikely to affect frame rate.\n",
+  "phrases": {
+    "active": "Defer"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "fn": {
+        "type": "Function",
+        "title": "Fn",
+        "description": ""
+      }
+    },
+    "output": {
+    }
+  }
+}

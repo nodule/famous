@@ -1,0 +1,23 @@
+{
+  "name": "setFPSCap",
+  "ns": "engine",
+  "title": "Set fpscap",
+  "description": "Set the maximum fps at which the system should run. If internal render\n   loop is called at a greater frequency than this FPSCap, Engine will\n   throttle render and update until this rate is achieved.\n",
+  "phrases": {
+    "active": "Set fpscap"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "fps": {
+        "type": "number",
+        "title": "Fps",
+        "description": "maximum frames per second"
+      }
+    },
+    "output": {
+    }
+  }
+}

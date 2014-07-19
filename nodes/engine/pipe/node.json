@@ -1,0 +1,29 @@
+{
+  "name": "pipe",
+  "ns": "engine",
+  "title": "Pipe",
+  "description": "Add event handler object to set of downstream handlers.\n",
+  "phrases": {
+    "active": "Pipe"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "target": {
+        "type": "EventHandler",
+        "title": "Target",
+        "description": "event handler target object",
+        "async": true
+      }
+    },
+    "output": {
+      "event_handler": {
+        "type": "EventHandler",
+        "title": "Event handler",
+        "description": "passed event handler"
+      }
+    }
+  }
+}

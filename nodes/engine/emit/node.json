@@ -1,0 +1,32 @@
+{
+  "name": "emit",
+  "ns": "engine",
+  "title": "Emit",
+  "description": "Trigger an event, sending to all downstream handlers\n  listening for provided 'type' key.\n",
+  "phrases": {
+    "active": "Emit"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "type": {
+        "type": "string",
+        "title": "Type",
+        "description": "event type key (for example, 'click')"
+      },
+      "event": {
+        "type": "object",
+        "title": "Event",
+        "description": "event data"
+      }
+    },
+    "output": {
+      "event_handler": {
+        "type": "EventHandler",
+        "title": "Event handler"
+      }
+    }
+  }
+}

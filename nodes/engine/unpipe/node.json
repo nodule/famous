@@ -1,0 +1,29 @@
+{
+  "name": "unpipe",
+  "ns": "engine",
+  "title": "Unpipe",
+  "description": "Remove handler object from set of downstream handlers.\n  Undoes work of \"pipe\".\n",
+  "phrases": {
+    "active": "Unpipe"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "target": {
+        "type": "EventHandler",
+        "title": "Target",
+        "description": "target handler object",
+        "async": true
+      }
+    },
+    "output": {
+      "event_handler": {
+        "type": "EventHandler",
+        "title": "Event handler",
+        "description": "provided target"
+      }
+    }
+  }
+}

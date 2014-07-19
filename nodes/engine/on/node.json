@@ -1,0 +1,33 @@
+{
+  "name": "on",
+  "ns": "engine",
+  "title": "On",
+  "description": "Bind a callback function to an event type handled by this object.\n",
+  "phrases": {
+    "active": "On"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "type": {
+        "type": "string",
+        "title": "Type",
+        "description": "event type key (for example, 'click')"
+      },
+      "handler": {
+        "type": "function",
+        "title": "Handler",
+        "description": "handler callback TODO: not sure what the function receives",
+        "args": ["type","obj"]
+      }
+    },
+    "output": {
+      "event_handler": {
+        "type": "EventHandler",
+        "title": "Event handler"
+      }
+    }
+  }
+}

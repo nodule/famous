@@ -1,0 +1,29 @@
+{
+  "name": "createContext",
+  "ns": "engine",
+  "title": "Create context",
+  "description": "Creates a new Context for rendering and event handling with\n   provided document element as top of each tree. This will be tracked by the\n   process-wide Engine.\n",
+  "phrases": {
+    "active": "Create context"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "el": {
+        "type": "Node",
+        "title": "El",
+        "description": "will be top of Famo.us document element tree",
+        "async": true
+      }
+    },
+    "output": {
+      "context": {
+        "type": "Context",
+        "title": "Context",
+        "description": "new Context within el"
+      }
+    }
+  }
+}

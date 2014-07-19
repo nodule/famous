@@ -1,0 +1,23 @@
+{
+  "name": "nextTick",
+  "ns": "engine",
+  "title": "Next tick",
+  "description": "Queue a function to be executed on the next tick of the\n   Engine.\n",
+  "phrases": {
+    "active": "Next tick"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "fn": {
+        "type": "function(Object)",
+        "title": "Fn",
+        "description": "function accepting window object"
+      }
+    },
+    "output": {
+    }
+  }
+}

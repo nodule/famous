@@ -1,0 +1,29 @@
+{
+  "name": "registerContext",
+  "ns": "engine",
+  "title": "Register context",
+  "description": "Registers an existing context to be updated within the run loop.\n",
+  "phrases": {
+    "active": "Register context"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "context": {
+        "type": "Context",
+        "title": "Context",
+        "description": "Context to register",
+        "async": true
+      }
+    },
+    "output": {
+      "famous_context": {
+        "type": "FamousContext",
+        "title": "Famous context",
+        "description": "provided context"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "setOptions",
+  "ns": "engine",
+  "title": "Set options",
+  "description": "Set engine options\n",
+  "phrases": {
+    "active": "Set options"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "options": {
+        "type": "object",
+        "title": "Options",
+        "description": "overrides of default options",
+        "properties": {
+          "fps_cap": {
+            "type": "number",
+            "title": "fps cap",
+            "description": "maximum fps at which the system should run"
+          },
+          "run_loop": {
+            "type": "boolean",
+            "title": "run loop",
+            "description": "whether the run loop should continue",
+            "default": true
+          },
+          "container_type": {
+            "type": "string",
+            "title": "Container type",
+            "description": "type of container element. Defaults to 'div'.",
+            "default": "div"
+          },
+          "container_class": {
+            "type": "string",
+            "title": "Container class",
+            "description": "type of container element. Defaults to 'famous-container'.",
+            "default": "famous_container"
+          }
+        }
+      }
+    },
+    "output": {
+    }
+  }
+}

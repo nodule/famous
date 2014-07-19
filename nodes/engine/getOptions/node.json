@@ -1,0 +1,29 @@
+{
+  "name": "getOptions",
+  "ns": "engine",
+  "title": "Get options",
+  "description": "Return engine options.\n",
+  "phrases": {
+    "active": "Get options"
+  },
+  "require": {
+    "famous/core/Engine": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "key": {
+        "type": "string",
+        "title": "Key",
+        "description": "",
+        "async": true
+      }
+    },
+    "output": {
+      "object": {
+        "type": "object",
+        "title": "Object",
+        "description": "engine options"
+      }
+    }
+  }
+}
