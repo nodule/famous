@@ -1,0 +1,1944 @@
+{
+  "name": "famous",
+  "description": "Famous for Chiχ",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/famous.git"
+  },
+  "dependencies": {
+    "famous": "0.x.x"
+  },
+  "nodes": [
+    {
+      "ports": {
+        "input": {
+          "el": {
+            "type": "Node",
+            "title": "El",
+            "description": "will be top of Famo.us document element tree",
+            "async": true
+          }
+        },
+        "output": {
+          "context": {
+            "type": "Context",
+            "title": "Context",
+            "description": "new Context within el"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Create context"
+      },
+      "description": "Creates a new Context for rendering and event handling with\n   provided document element as top of each tree. This will be tracked by the\n   process-wide Engine.\n",
+      "title": "Create context",
+      "ns": "engine",
+      "name": "createContext",
+      "fn": "on.input.el = function() {\n  output( { context: engine.createContext(data) });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "fn": {
+            "type": "Function",
+            "title": "Fn",
+            "description": ""
+          }
+        },
+        "output": {}
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Defer"
+      },
+      "description": "Queue a function to be executed sometime soon, at a time that is\n   unlikely to affect frame rate.\n",
+      "title": "Defer",
+      "ns": "engine",
+      "name": "defer",
+      "fn": "on.input.fn = function() {\n  engine.defer(data);\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "event type key (for example, 'click')"
+          },
+          "event": {
+            "type": "object",
+            "title": "Event",
+            "description": "event data"
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Emit"
+      },
+      "description": "Trigger an event, sending to all downstream handlers\n  listening for provided 'type' key.\n",
+      "title": "Emit",
+      "ns": "engine",
+      "name": "emit",
+      "fn": "output = function() {\n  cb( { event_handler: engine.emit(input.type, input.event) });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {},
+        "output": {
+          "number": {
+            "type": "number",
+            "title": "Number",
+            "description": "calculated fps"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Get fps"
+      },
+      "description": "Return the current calculated frames per second of the Engine.\n",
+      "title": "Get fps",
+      "ns": "engine",
+      "name": "getFPS",
+      "fn": "output = function() {\n  cb( { event_handler: engine.emit(input.type, input.event) });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "key": {
+            "type": "string",
+            "title": "Key",
+            "description": "",
+            "async": true
+          }
+        },
+        "output": {
+          "object": {
+            "type": "object",
+            "title": "Object",
+            "description": "engine options"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Get options"
+      },
+      "description": "Return engine options.\n",
+      "title": "Get options",
+      "ns": "engine",
+      "name": "getOptions",
+      "fn": "on.input.key = function() {\n  output( { object: engine.getOptions(data) });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "fn": {
+            "type": "function(Object)",
+            "title": "Fn",
+            "description": "function accepting window object"
+          }
+        },
+        "output": {}
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Next tick"
+      },
+      "description": "Queue a function to be executed on the next tick of the\n   Engine.\n",
+      "title": "Next tick",
+      "ns": "engine",
+      "name": "nextTick",
+      "fn": "on.input.fn = function() {\n  engine.nextTick(data);\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "event type key (for example, 'click')"
+          },
+          "handler": {
+            "type": "function",
+            "title": "Handler",
+            "description": "handler callback TODO: not sure what the function receives",
+            "args": [
+              "type",
+              "obj"
+            ]
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "On"
+      },
+      "description": "Bind a callback function to an event type handled by this object.\n",
+      "title": "On",
+      "ns": "engine",
+      "name": "on",
+      "fn": "output = function() {\n\n  cb( {\n    event_handler: engine.on(input.type, input.handler)\n  });\n  done();\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "target": {
+            "type": "EventHandler",
+            "title": "Target",
+            "description": "event handler target object",
+            "async": true
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler",
+            "description": "passed event handler"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Pipe"
+      },
+      "description": "Add event handler object to set of downstream handlers.\n",
+      "title": "Pipe",
+      "ns": "engine",
+      "name": "pipe",
+      "fn": "on.input.target = function() {\n  output( { event_handler: engine.pipe(data) });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "context": {
+            "type": "Context",
+            "title": "Context",
+            "description": "Context to register",
+            "async": true
+          }
+        },
+        "output": {
+          "famous_context": {
+            "type": "FamousContext",
+            "title": "Famous context",
+            "description": "provided context"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Register context"
+      },
+      "description": "Registers an existing context to be updated within the run loop.\n",
+      "title": "Register context",
+      "ns": "engine",
+      "name": "registerContext",
+      "fn": "on.input.context = function() {\n  output( { famous_context: engine.registerContext(data) });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "event type key (for example, 'click')"
+          },
+          "handler": {
+            "type": "function",
+            "title": "Handler",
+            "description": "function object to remove"
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler",
+            "description": "internal event handler object (for chaining)"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Remove listener"
+      },
+      "description": "Unbind an event by type and handler.\n  This undoes the work of \"on\".\n",
+      "title": "Remove listener",
+      "ns": "engine",
+      "name": "removeListener",
+      "fn": "output = function() {\n  cb( { event_handler: engine.removeListener(input.type, input.handler) })\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "fps": {
+            "type": "number",
+            "title": "Fps",
+            "description": "maximum frames per second"
+          }
+        },
+        "output": {}
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Set fpscap"
+      },
+      "description": "Set the maximum fps at which the system should run. If internal render\n   loop is called at a greater frequency than this FPSCap, Engine will\n   throttle render and update until this rate is achieved.\n",
+      "title": "Set fpscap",
+      "ns": "engine",
+      "name": "setFPSCap",
+      "fn": "on.input.fps = function() {\n  engine.setFPSCap(data);\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "options": {
+            "type": "object",
+            "title": "Options",
+            "description": "overrides of default options",
+            "properties": {
+              "fps_cap": {
+                "type": "number",
+                "title": "fps cap",
+                "description": "maximum fps at which the system should run"
+              },
+              "run_loop": {
+                "type": "boolean",
+                "title": "run loop",
+                "description": "whether the run loop should continue",
+                "default": true
+              },
+              "container_type": {
+                "type": "string",
+                "title": "Container type",
+                "description": "type of container element. Defaults to 'div'.",
+                "default": "div"
+              },
+              "container_class": {
+                "type": "string",
+                "title": "Container class",
+                "description": "type of container element. Defaults to 'famous-container'.",
+                "default": "famous_container"
+              }
+            }
+          }
+        },
+        "output": {}
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Set options"
+      },
+      "description": "Set engine options\n",
+      "title": "Set options",
+      "ns": "engine",
+      "name": "setOptions",
+      "fn": "on.input.options = function() {\n  engine.setOptions(data);\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "target": {
+            "type": "EventHandler",
+            "title": "Target",
+            "description": "target handler object",
+            "async": true
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler",
+            "description": "provided target"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Engine": "0.x.x"
+      },
+      "phrases": {
+        "active": "Unpipe"
+      },
+      "description": "Remove handler object from set of downstream handlers.\n  Undoes work of \"pipe\".\n",
+      "title": "Unpipe",
+      "ns": "engine",
+      "name": "unpipe",
+      "fn": "on.input.target = function() {\n  output( { event_handler: engine.unpipe(data) });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "align": {
+            "type": "any",
+            "title": "Align",
+            "description": "provider object",
+            "async": true
+          },
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        },
+        "output": {
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Align from"
+      },
+      "description": "Set function, object, or numerical array to provide align, as [x,y],\n  where x and y are in the range [0,1].\n",
+      "title": "Align from",
+      "ns": "modifier",
+      "name": "alignFrom",
+      "fn": "on.input.align = function() {\n  input.modifier.alignFrom(data);\n  output( { modifier: input.modifier });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "options": {
+            "type": "object",
+            "title": "Options",
+            "description": "overrides of default options",
+            "properties": {
+              "transform": {
+                "type": "array",
+                "title": "Transform",
+                "description": "affine transformation matrix"
+              },
+              "opacity": {
+                "type": "number",
+                "title": "Opacity"
+              },
+              "Origin": {
+                "type": "array",
+                "title": "Origin",
+                "description": "origin adjustment"
+              },
+              "Size": {
+                "type": "array",
+                "title": "Size",
+                "description": "size to apply to descendants"
+              }
+            }
+          }
+        },
+        "output": {
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Modifier": "0.x.x"
+      },
+      "phrases": {
+        "active": "Modifier"
+      },
+      "description": "A collection of visual changes to be\n   applied to another renderable component. This collection includes a\n   transform matrix, an opacity constant, a size, an origin specifier.\n   Modifier objects can be added to any RenderNode or object\n   capable of displaying renderables.  The Modifier's children and descendants\n   are transformed by the amounts specified in the Modifier's properties.\n",
+      "title": "Modifier",
+      "ns": "modifier",
+      "name": "api",
+      "fn": "output = function() {\n  cb( { modifier: new modifier(input.options) });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "target": {
+            "type": "object",
+            "title": "Target",
+            "description": "(already rendered) render spec to    which to apply the transform.",
+            "async": true
+          },
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        },
+        "output": {
+          "object": {
+            "type": "object",
+            "title": "Object",
+            "description": "render spec for this Modifier, including the    provided target"
+          },
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Modify"
+      },
+      "description": "Return render spec for this Modifier, applying to the provided\n   target component.  This is similar to render() for Surfaces.\n",
+      "title": "Modify",
+      "ns": "modifier",
+      "name": "modify",
+      "fn": "on.input.target = function() {\n  output( { object: input.modifier.modify(data), modifier: input.modifier })\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "opacity": {
+            "type": "any",
+            "title": "Opacity",
+            "description": "provider object",
+            "async": true
+          },
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        },
+        "output": {
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Opacity from"
+      },
+      "description": "Set function, object, or number to provide opacity, in range [0,1].\n",
+      "title": "Opacity from",
+      "ns": "modifier",
+      "name": "opacityFrom",
+      "fn": "on.input.opacity = function() {\n  input.modifier.opacityFrom(data);\n  output( { modifier: input.modifier });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "origin": {
+            "type": "any",
+            "title": "Origin",
+            "description": "provider object",
+            "async": true
+          },
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        },
+        "output": {
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Origin from"
+      },
+      "description": "Set function, object, or numerical array to provide origin, as [x,y],\n  where x and y are in the range [0,1].\n",
+      "title": "Origin from",
+      "ns": "modifier",
+      "name": "originFrom",
+      "fn": "on.input.origin = function() {\n  input.modifier.originFrom(data);\n  output( { modifier: input.modifier });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "size": {
+            "type": "any",
+            "title": "Size",
+            "description": "provider object",
+            "async": true
+          },
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        },
+        "output": {
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Size from"
+      },
+      "description": "Set function, object, or numerical array to provide size, as [width, height].\n",
+      "title": "Size from",
+      "ns": "modifier",
+      "name": "sizeFrom",
+      "fn": "on.input.size = function() {\n  input.modifier.sizeFrom(data);\n  output( { modifier: input.modifier });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transform": {
+            "type": "object",
+            "title": "Transform",
+            "description": "transform provider object",
+            "async": true
+          },
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        },
+        "output": {
+          "modifier": {
+            "type": "Modifier",
+            "title": "Modifier"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Transform from"
+      },
+      "description": "Function, object, or static transform matrix which provides the transform.\n  This is evaluated on every tick of the engine.\n",
+      "title": "Transform from",
+      "ns": "modifier",
+      "name": "transformFrom",
+      "fn": "on.input.transform = function() {\n  input.modifier.transformFrom(data);\n  output( { modifier: input.modifier });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "container": {
+            "type": "ContainerSurface",
+            "title": "Container Surface"
+          },
+          "renderable": {
+            "type": "Renderable",
+            "title": "Renderable object",
+            "async": true
+          }
+        },
+        "output": {
+          "render_node": {
+            "type": "RenderNode",
+            "title": "RenderNode wrapping this object, if not already a RenderNode"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Adding renderable"
+      },
+      "description": "Add renderables to this object's render tree",
+      "title": "Add Renderable to a Container surface",
+      "ns": "surface",
+      "name": "add",
+      "fn": "state = input.container;\n\non.input.renderable = function() {\n  output({ render_node: state.add(data) });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "options": {
+            "type": "object",
+            "title": "Options",
+            "description": "default option overrides",
+            "properties": {
+              "size": {
+                "type": "array",
+                "title": "Size",
+                "description": "[width, height] in pixels"
+              },
+              "classes": {
+                "type": "array",
+                "title": "Classes",
+                "description": "CSS classes to set on inner content"
+              },
+              "properties": {
+                "type": "array",
+                "title": "Properties",
+                "description": "string dictionary of HTML attributes to set on target div"
+              },
+              "content": {
+                "type": "string",
+                "title": "Content",
+                "description": "inner (HTML) content of surface"
+              },
+              "canvas_size": {
+                "type": "array",
+                "title": "Canvas size",
+                "description": "[width, height] for document element",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            }
+          }
+        },
+        "output": {
+          "surface": {
+            "type": "CanvasSurface",
+            "title": "CanvasSurface"
+          }
+        }
+      },
+      "require": {
+        "famous/surfaces/CanvasSurface": "0.x.x"
+      },
+      "phrases": {
+        "active": "Canvas surface"
+      },
+      "description": "A surface containing an HTML5 Canvas element.\n  This extends the Surface class.\n",
+      "title": "Canvas surface",
+      "ns": "surface",
+      "name": "canvas",
+      "fn": "state = new canvas_surface(input.options);\n/*\non.input.context_id = function() {\n  input.canvassurface.CanvasSurface(data);\n  output( { canvassurface: input.canvassurface });\n};\n*/\noutput({ surface: state });\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "options": {
+            "type": "object",
+            "title": "options",
+            "description": "default option overrides",
+            "properties": {
+              "size": {
+                "type": "array",
+                "title": "Size",
+                "description": "[width, height] in pixels"
+              },
+              "classes": {
+                "type": "array",
+                "title": "Classes",
+                "description": "CSS classes to set on inner content"
+              },
+              "properties": {
+                "type": "array",
+                "title": "Properties",
+                "description": "string dictionary of HTML attributes to set on target div"
+              }
+            }
+          }
+        },
+        "output": {
+          "surface": {
+            "type": "ContainerSurface",
+            "title": "Surface"
+          }
+        }
+      },
+      "require": {
+        "famous/surfaces/ContainerSurface": "0.x.x"
+      },
+      "phrases": {
+        "active": "Container surface"
+      },
+      "description": "ContainerSurface is an object designed to contain surfaces and\n  set properties to be applied to all of them at once.\n  This extends the Surface class.\n  A container surface will enforce these properties on the\n  surfaces it contains:\n\n  size (clips contained surfaces to its own width and height);\n\n  origin;\n\n  its own opacity and transform, which will be automatically\n  applied to  all Surfaces contained directly and indirectly.\n",
+      "title": "Container surface",
+      "ns": "surface",
+      "name": "container",
+      "fn": "output = function() {\n  cb( { surface: new container_surface(input.options) } );\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "options": {
+            "type": "object",
+            "title": "options",
+            "description": "default option overrides",
+            "properties": {
+              "size": {
+                "type": "array",
+                "title": "Size",
+                "description": "[width, height] in pixels"
+              },
+              "classes": {
+                "type": "array",
+                "title": "Classes",
+                "description": "CSS classes to set on inner content"
+              },
+              "properties": {
+                "type": "array",
+                "title": "Properties",
+                "description": "string dictionary of HTML attributes to set on target div"
+              }
+            }
+          },
+          "image_url": {
+            "type": "string",
+            "title": "Image url",
+            "async": true
+          }
+        },
+        "output": {
+          "surface": {
+            "type": "ImageSurface",
+            "title": "Surface"
+          }
+        }
+      },
+      "require": {
+        "famous/surfaces/ImageSurface": "0.x.x"
+      },
+      "phrases": {
+        "active": "Image surface"
+      },
+      "description": "A surface containing image content.\n  This extends the Surface class.\n",
+      "title": "Image surface",
+      "ns": "surface",
+      "name": "image",
+      "fn": "state = new image_surface(input.options);\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "options": {
+            "type": "object",
+            "title": "options",
+            "description": "default option overrides",
+            "properties": {
+              "size": {
+                "type": "array",
+                "title": "Size",
+                "description": "[width, height] in pixels"
+              },
+              "classes": {
+                "type": "array",
+                "title": "Classes",
+                "description": "CSS classes to set on inner content"
+              },
+              "properties": {
+                "type": "array",
+                "title": "Properties",
+                "description": "string dictionary of HTML attributes to set on target div"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Set the name attribute of the element"
+              },
+              "type": {
+                "type": "string",
+                "title": "Type",
+                "description": "specifies the type of element to display",
+                "enum": [
+                  "button",
+                  "checkbox",
+                  "color",
+                  "date",
+                  "datetime",
+                  "datetime-local",
+                  "email",
+                  "search",
+                  "month",
+                  "number",
+                  "password",
+                  "radio",
+                  "range",
+                  "tel",
+                  "text",
+                  "time",
+                  "url",
+                  "week"
+                ]
+              }
+            }
+          },
+          "placeholder": {
+            "type": "string",
+            "title": "Placeholder",
+            "description": "placeholder text hint that describes the expected value of an <input> element",
+            "async": true
+          },
+          "value": {
+            "type": "string",
+            "title": "Value",
+            "description": "value of text",
+            "async": true
+          },
+          "blur": {
+            "type": "any",
+            "title": "Blur",
+            "description": "Blur the current input, hiding the keyboard on mobile",
+            "async": true
+          },
+          "focus": {
+            "type": "any",
+            "title": "Focus",
+            "description": "Focus the current input, pulling up the keyboard on mobile",
+            "async": true
+          }
+        },
+        "output": {
+          "surface": {
+            "type": "InputSurface",
+            "title": "Surface"
+          }
+        }
+      },
+      "require": {
+        "famous/surfaces/InputSurface": "0.x.x"
+      },
+      "phrases": {
+        "active": "Input surface"
+      },
+      "description": "A Famo.us surface in the form of an HTML input element.\n  This extends the Surface class.\n",
+      "title": "Input surface",
+      "ns": "surface",
+      "name": "input",
+      "fn": "state = new input_surface(input.options);\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "options": {
+            "type": "object",
+            "title": "options",
+            "description": "default option overrides",
+            "properties": {
+              "size": {
+                "type": "array",
+                "title": "Size",
+                "description": "[width, height] in pixels"
+              },
+              "classes": {
+                "type": "array",
+                "title": "Classes",
+                "description": "CSS classes to set on inner content"
+              },
+              "properties": {
+                "type": "array",
+                "title": "Properties",
+                "description": "string dictionary of HTML attributes to set on target div"
+              },
+              "content": {
+                "type": "string",
+                "title": "Content",
+                "description": "inner (HTML) content of surface"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "specifies the name of textarea"
+              }
+            },
+            "placeholder": {
+              "type": "string",
+              "title": "Placeholder",
+              "description": "placeholder text hint that describes the expected value of an textarea element",
+              "async": true
+            },
+            "value": {
+              "type": "string",
+              "title": "Value",
+              "description": "value of text",
+              "async": true
+            },
+            "wrap": {
+              "type": "string",
+              "title": "Wrap",
+              "description": "specify 'hard' or 'soft' wrap for textarea",
+              "async": true
+            },
+            "cols": {
+              "type": "number",
+              "title": "cols",
+              "description": "number of columns in textarea",
+              "async": true
+            },
+            "rows": {
+              "type": "number",
+              "title": "rows",
+              "description": "number of rows in textarea",
+              "async": true
+            }
+          }
+        },
+        "output": {
+          "surface": {
+            "type": "TextareaSurface",
+            "title": "Surface"
+          }
+        }
+      },
+      "require": {
+        "famous/surfaces/TextareaSurface": "0.x.x"
+      },
+      "phrases": {
+        "active": "Textarea surface"
+      },
+      "description": "A Famo.us surface in the form of an HTML textarea element.\n  This extends the Surface class.\n",
+      "title": "Textarea surface",
+      "ns": "surface",
+      "name": "textarea",
+      "fn": "state = new input_surface(input.options);\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "options": {
+            "type": "object",
+            "title": "options",
+            "description": "default option overrides",
+            "properties": {
+              "size": {
+                "type": "array",
+                "title": "Size",
+                "description": "[width, height] in pixels"
+              },
+              "classes": {
+                "type": "array",
+                "title": "Classes",
+                "description": "CSS classes to set on inner content"
+              },
+              "properties": {
+                "type": "array",
+                "title": "Properties",
+                "description": "string dictionary of HTML attributes to set on target div"
+              },
+              "content": {
+                "type": "string",
+                "title": "Content",
+                "description": "inner (HTML) content of surface"
+              },
+              "autoplay": {
+                "type": "boolean",
+                "title": "autoplay",
+                "description": "HTML autoplay"
+              }
+            }
+          },
+          "video_url": {
+            "type": "string",
+            "title": "Video url",
+            "description": "URL",
+            "async": true
+          }
+        },
+        "output": {
+          "surface": {
+            "type": "VideoSurface",
+            "title": "Surface"
+          }
+        }
+      },
+      "require": {
+        "famous/surfaces/VideoSurface": "0.x.x"
+      },
+      "phrases": {
+        "active": "Video surface"
+      },
+      "description": "Creates a famous surface containing video content. Currently adding\n  controls and manipulating the video are not supported through the\n  surface interface, but can be accomplished via standard JavaScript\n  manipulation of the video DOM element.\n  This extends the Surface class.\n",
+      "title": "Video surface",
+      "ns": "surface",
+      "name": "video",
+      "fn": "state = new video_surface(input.options);\n\non.input.video_url = function() {\n  state.setContent(data);\n};\n\noutput( { surface: state } );\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "origin": {
+            "type": "array",
+            "title": "Origin",
+            "description": "origin point to apply matrix"
+          },
+          "matrix": {
+            "type": "array",
+            "title": "Matrix",
+            "description": "matrix to apply"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "About origin"
+      },
+      "description": "Return a Transform which represents a transform matrix applied about\na separate origin point.\n",
+      "title": "About origin",
+      "ns": "transform",
+      "name": "aboutOrigin",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.aboutOrigin(input.origin, input.matrix)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transform1": {
+            "type": "array",
+            "title": "Matrix 1",
+            "description": "f(M1,M2,0) = M1"
+          },
+          "transform2": {
+            "type": "array",
+            "title": "Matrix 2",
+            "description": "f(M1,M2,1) = M2"
+          },
+          "weight": {
+            "type": "number",
+            "title": "Weight",
+            "default": 0.5
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Average"
+      },
+      "description": "Weighted average between two matrices by averaging their\n    translation, rotation, scale, skew components.\n    f(M1,M2,t) = (1 - t) * M1 + t * M2\n",
+      "title": "Average",
+      "ns": "transform",
+      "name": "average",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.average(input.transform1, input.transform2)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "spec": {
+            "type": "object",
+            "title": "Matrix Spec",
+            "description": "object with component matrices .translate,    .rotate, .scale, .skew",
+            "properties": {
+              "translate": {
+                "type": "array"
+              },
+              "rotate": {
+                "type": "array"
+              },
+              "scale": {
+                "type": "array"
+              },
+              "skey": {
+                "type": "array"
+              }
+            }
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": "composed transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Build"
+      },
+      "description": "Compose .translate, .rotate, .scale, .skew components into\nTransform matrix\n",
+      "title": "Build",
+      "ns": "transform",
+      "name": "build",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.build(input.spec)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transformA": {
+            "type": "array",
+            "title": "Transform A",
+            "description": "matrix"
+          },
+          "transformB": {
+            "type": "array",
+            "title": "Transform B",
+            "description": "matrix"
+          }
+        },
+        "output": {
+          "out": {
+            "type": "boolean",
+            "title": "Boolean"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Equals"
+      },
+      "description": "Determine if two Transforms are component-wise equal\n  Warning: breaks on perspective Transforms\n",
+      "title": "Equals",
+      "ns": "transform",
+      "name": "equals",
+      "fn": "output = function() {\n  cb({\n    out: transform.equals(input.transformA, input.transformB)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": "Transform"
+          }
+        },
+        "output": {
+          "translate": {
+            "type": "array",
+            "title": "Translate",
+            "description": "the translation vector [t_x, t_y, t_z]"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Get translate"
+      },
+      "description": "Return translation vector component of given Transform\n",
+      "title": "Get translate",
+      "ns": "transform",
+      "name": "getTranslate",
+      "fn": "output = function() {\n  cb( {\n    translate: transform.getTranslate(input.translate)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": "transform matrix"
+          }
+        },
+        "output": {
+          "out": {
+            "type": "object",
+            "title": "Object",
+            "description": "matrix spec object with component matrices .translate,    .rotate, .scale, .skew",
+            "properties": {
+              "translate": {
+                "type": "array"
+              },
+              "rotate": {
+                "type": "array"
+              },
+              "scale": {
+                "type": "array"
+              },
+              "skew": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Interpret"
+      },
+      "description": "Decompose Transform into separate .translate, .rotate, .scale,\n   and .skew components.\n",
+      "title": "Interpret",
+      "ns": "transform",
+      "name": "interpret",
+      "fn": "output = function() {\n  cb( {\n    out: transform.interpret(input.transform)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": "Transform"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": ""
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Inverse"
+      },
+      "description": "Return inverse affine transform for given Transform.\n  Note: This assumes m[3] = m[7] = m[11] = 0, and m[15] = 1.\n  Will provide incorrect results if not invertible or preconditions not met.\n",
+      "title": "Inverse",
+      "ns": "translate",
+      "name": "inverse",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.inverse(input.transform)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "vector": {
+            "type": "array",
+            "title": "Vector",
+            "description": "vector representing initial movement"
+          },
+          "matrix": {
+            "type": "array",
+            "title": "Matrix",
+            "description": "matrix to apply afterwards",
+            "async": true
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": "the resulting matrix"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Move then"
+      },
+      "description": "Return a Transform matrix which represents the result of a transform matrix\n   applied after a move. This is faster than the equivalent multiply.\n   This is equivalent to the result of:\n\n   Transform.multiply(m, Transform.translate(t[0], t[1], t[2])).\n",
+      "title": "Move then",
+      "ns": "transform",
+      "name": "moveThen",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.moveThen(input.vector, input.matrix)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transformA": {
+            "type": "array",
+            "title": "A",
+            "description": "left Transform",
+            "async": true
+          },
+          "transformB": {
+            "type": "array",
+            "title": "B",
+            "description": "right Transform",
+            "async": true
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Multiply"
+      },
+      "description": "Fast-multiply two or more Transform matrix types to return a\n   Matrix, assuming bottom row on each is [0 0 0 1].\n",
+      "title": "Multiply",
+      "ns": "famous",
+      "name": "multiply",
+      "fn": "output = function() {\n\n  cb({\n    out: transform.multiply(input.transformA, input.transformB)\n  });\n  done();\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transformA": {
+            "type": "array",
+            "title": "Transform A",
+            "description": "left Transform"
+          },
+          "transformB": {
+            "type": "array",
+            "title": "Transform B",
+            "description": "right Transform"
+          }
+        },
+        "output": {
+          "out": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Multiply4x4"
+      },
+      "description": "Multiply two or more Transform matrix types to return a Transform matrix.\n",
+      "title": "Multiply4x4",
+      "ns": "transform",
+      "name": "multiply4x4",
+      "fn": "output = function() {\n\n  cb({\n    out: transform.multiply4x4(input.transformA, input.transformB);\n  });\n\n  done();\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "rotation": {
+            "type": "array",
+            "title": "Rotation",
+            "description": "phi, theta, psi (array of floats    && array.length == 3)"
+          }
+        },
+        "output": {
+          "out": {
+            "type": "array",
+            "title": "Array",
+            "description": "new phi, theta, psi triplet    (array of floats && array.length == 3)",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Normalize rotation"
+      },
+      "description": "Constrain angle-trio components to range of [-pi, pi).\n",
+      "title": "Normalize rotation",
+      "ns": "transform",
+      "name": "normalizeRotation",
+      "fn": "output = function() {\n  cb( {\n    out: transform.normalizeRotation(input.rotation)\n  });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transformA": {
+            "type": "array",
+            "title": "Transform A",
+            "description": "matrix"
+          },
+          "transformB": {
+            "type": "array",
+            "title": "Transform B",
+            "description": "matrix"
+          }
+        },
+        "output": {
+          "out": {
+            "type": "boolean",
+            "title": "Boolean"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Not equals"
+      },
+      "description": "Determine if two Transforms are component-wise unequal\n  Warning: breaks on perspective Transforms\n",
+      "title": "Not equals",
+      "ns": "transform",
+      "name": "notEquals",
+      "fn": "output = function() {\n  cb({\n    out: transform.notEquals(input.transformA, input.transformB)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "focus_z": {
+            "type": "number",
+            "title": "Focus z",
+            "description": "z position of focal point"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Perspective"
+      },
+      "description": "Returns a perspective Transform matrix\n",
+      "title": "Perspective",
+      "ns": "transform",
+      "name": "perspective",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.perspective(input.focusZ)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "phi": {
+            "type": "number",
+            "title": "Phi",
+            "description": "radians to rotate about the positive x axis"
+          },
+          "theta": {
+            "type": "number",
+            "title": "Theta",
+            "description": "radians to rotate about the positive y axis"
+          },
+          "psi": {
+            "type": "number",
+            "title": "Psi",
+            "description": "radians to rotate about the positive z axis"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Rotate"
+      },
+      "description": "Return a Transform which represents composed clockwise\n   rotations along each of the axes. Equivalent to the result of\n   Matrix.multiply(rotateX(phi), rotateY(theta), rotateZ(psi)).\n",
+      "title": "Rotate",
+      "ns": "transform",
+      "name": "rotate",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.rotate(phi, theta, psi);\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "v": {
+            "type": "array",
+            "title": "V",
+            "description": "unit vector representing the axis to rotate about"
+          },
+          "theta": {
+            "type": "number",
+            "title": "Theta",
+            "description": "radians to rotate clockwise about the axis"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Rotate axis"
+      },
+      "description": "Return a Transform which represents an axis-angle rotation\n",
+      "title": "Rotate axis",
+      "ns": "transform",
+      "name": "rotateAxis",
+      "fn": "output = function() {\n  cb({\n    transform: transform.rotateAxis(input.v, input.theta)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "theta": {
+            "type": "number",
+            "title": "Theta",
+            "description": "radians"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Rotate x"
+      },
+      "description": "Return a Transform which represents a clockwise\n   rotation around the x axis.\n",
+      "title": "Rotate x",
+      "ns": "transform",
+      "name": "rotateX",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.rotateX(input.theta)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "theta": {
+            "type": "number",
+            "title": "Theta",
+            "description": "radians"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Rotate y"
+      },
+      "description": "Return a Transform which represents a clockwise\n   rotation around the y axis.\n",
+      "title": "Rotate y",
+      "ns": "transform",
+      "name": "rotateY",
+      "fn": "output = function() {\n\n  cb({\n    transform: transform.rotateY(input.theta)\n  });\n  done();\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "theta": {
+            "type": "number",
+            "title": "Theta",
+            "description": "radians"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Rotate z"
+      },
+      "description": "Return a Transform which represents a clockwise\n   rotation around the z axis.\n",
+      "title": "Rotate z",
+      "ns": "transform",
+      "name": "rotateZ",
+      "fn": "output = function() {\n  cb( {\n    transform: input.rotateZ(input.theta)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "x": {
+            "type": "number",
+            "title": "X",
+            "description": "x scale factor"
+          },
+          "y": {
+            "type": "number",
+            "title": "Y",
+            "description": "y scale factor"
+          },
+          "z": {
+            "type": "number",
+            "title": "Z",
+            "description": "z scale factor"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Scale"
+      },
+      "description": "Return a Transform which represents a scale by specified amounts\n   in each dimension.\n",
+      "title": "Scale",
+      "ns": "transform",
+      "name": "scale",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.scale(input.x, input.y, input.z)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "phi": {
+            "type": "number",
+            "title": "Phi",
+            "description": "scale factor skew in the x axis"
+          },
+          "theta": {
+            "type": "number",
+            "title": "Theta",
+            "description": "scale factor skew in the y axis"
+          },
+          "psi": {
+            "type": "number",
+            "title": "Psi",
+            "description": "scale factor skew in the z axis"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Skew"
+      },
+      "description": "Return a Transform representation of a skew transformation\n",
+      "title": "Skew",
+      "ns": "transform",
+      "name": "skew",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.skew(input.phi, input.theta, input.psi)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "angle": {
+            "type": "number",
+            "title": "Angle",
+            "description": "the angle between the top and left sides"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Skew x"
+      },
+      "description": "Return a Transform representation of a skew in the x-direction\n",
+      "title": "Skew x",
+      "ns": "transform",
+      "name": "skewX",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.skewX(input.angle)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "angle": {
+            "type": "number",
+            "title": "Angle",
+            "description": "the angle between the top and right sides"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Skew y"
+      },
+      "description": "Return a Transform representation of a skew in the y-direction\n",
+      "title": "Skew y",
+      "ns": "transform",
+      "name": "skewY",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.skewY(input.angle)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": "a Transform"
+          },
+          "t": {
+            "type": "array",
+            "title": "T",
+            "description": "floats delta vector of length 2 or 3",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 3
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": ""
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Then move"
+      },
+      "description": "Return a Transform translated by additional amounts in each\n   dimension. This is equivalent to the result of\n\n   Transform.multiply(Matrix.translate(t[0], t[1], t[2]), m).\n",
+      "title": "Then move",
+      "ns": "transform",
+      "name": "thenMove",
+      "fn": "output = function() {\n  output( {\n    transform: transform.thenMove(input.transform, input.t)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "m": {
+            "type": "array",
+            "title": "M",
+            "description": "a matrix"
+          },
+          "s": {
+            "type": "array",
+            "title": "S",
+            "description": "delta vector (array of floats &&    array.length == 3)"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Then scale"
+      },
+      "description": "Return a Transform scaled by a vector in each\n   dimension. This is a more performant equivalent to the result of\n\n   Transform.multiply(Transform.scale(s[0], s[1], s[2]), m).\n",
+      "title": "Then scale",
+      "ns": "transform",
+      "name": "thenScale",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.thenScale(input.m, input.s)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "x": {
+            "type": "number",
+            "title": "X",
+            "description": "x translation"
+          },
+          "y": {
+            "type": "number",
+            "title": "Y",
+            "description": "y translation"
+          },
+          "z": {
+            "type": "number",
+            "title": "Z",
+            "description": "z translation"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Translate"
+      },
+      "description": "Return a Transform which represents a translation by specified\n   amounts in each dimension.\n",
+      "title": "Translate",
+      "ns": "transform",
+      "name": "translate",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.translate(input.x, input.y, input.z)\n  });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": "matrix"
+          }
+        },
+        "output": {
+          "transform": {
+            "type": "array",
+            "title": "Transform",
+            "description": "the resulting transposed matrix"
+          }
+        }
+      },
+      "require": {
+        "famous/core/Transform": "0.x.x"
+      },
+      "phrases": {
+        "active": "Transpose"
+      },
+      "description": "Returns the transpose of a 4x4 matrix\n",
+      "title": "Transpose",
+      "ns": "transform",
+      "name": "transpose",
+      "fn": "output = function() {\n  cb( {\n    transform: transform.transpose(input.transform)\n  });\n  done();\n};\n"
+    }
+  ],
+  "twigs": []
+}
