@@ -7,7 +7,7 @@
     "active": "Emit"
   },
   "require": {
-    "famous/core/Engine": "0.x.x"
+    "famo.us/core/Engine": "0.x.x"
   },
   "ports": {
     "input": {

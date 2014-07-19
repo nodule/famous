@@ -7,7 +7,7 @@
     "active": "Multiply"
   },
   "require": {
-    "famous/core/Transform": "0.x.x"
+    "famo.us/core/Transform": "0.x.x"
   },
   "ports": {
     "input": {

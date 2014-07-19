@@ -355,7 +355,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Create context"
@@ -378,7 +378,7 @@
         "output": {}
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Defer"
@@ -411,7 +411,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Emit"
@@ -434,7 +434,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Get fps"
@@ -464,7 +464,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Get options"
@@ -487,7 +487,7 @@
         "output": {}
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Next tick"
@@ -524,7 +524,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "On"
@@ -554,7 +554,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Pipe"
@@ -584,7 +584,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Register context"
@@ -618,7 +618,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Remove listener"
@@ -641,7 +641,7 @@
         "output": {}
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Set fpscap"
@@ -689,7 +689,7 @@
         "output": {}
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Set options"
@@ -719,7 +719,7 @@
         }
       },
       "require": {
-        "famous/core/Engine": "0.x.x"
+        "famo.us/core/Engine": "0.x.x"
       },
       "phrases": {
         "active": "Unpipe"
@@ -800,7 +800,7 @@
         }
       },
       "require": {
-        "famous/core/Modifier": "0.x.x"
+        "famo.us/core/Modifier": "0.x.x"
       },
       "phrases": {
         "active": "Modifier"
@@ -1044,7 +1044,7 @@
         }
       },
       "require": {
-        "famous/surfaces/CanvasSurface": "0.x.x"
+        "famo.us/surfaces/CanvasSurface": "0.x.x"
       },
       "phrases": {
         "active": "Canvas surface"
@@ -1089,7 +1089,7 @@
         }
       },
       "require": {
-        "famous/surfaces/ContainerSurface": "0.x.x"
+        "famo.us/surfaces/ContainerSurface": "0.x.x"
       },
       "phrases": {
         "active": "Container surface"
@@ -1160,7 +1160,7 @@
         }
       },
       "require": {
-        "famous/surfaces/ImageSurface": "0.x.x"
+        "famo.us/surfaces/ImageSurface": "0.x.x"
       },
       "phrases": {
         "active": "Image surface"
@@ -1259,7 +1259,7 @@
         }
       },
       "require": {
-        "famous/surfaces/InputSurface": "0.x.x"
+        "famo.us/surfaces/InputSurface": "0.x.x"
       },
       "phrases": {
         "active": "Input surface"
@@ -1344,7 +1344,7 @@
         }
       },
       "require": {
-        "famous/surfaces/TextareaSurface": "0.x.x"
+        "famo.us/surfaces/TextareaSurface": "0.x.x"
       },
       "phrases": {
         "active": "Textarea surface"
@@ -1405,7 +1405,7 @@
         }
       },
       "require": {
-        "famous/surfaces/VideoSurface": "0.x.x"
+        "famo.us/surfaces/VideoSurface": "0.x.x"
       },
       "phrases": {
         "active": "Video surface"
@@ -1438,7 +1438,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "About origin"
@@ -1476,7 +1476,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Average"
@@ -1519,7 +1519,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Build"
@@ -1552,7 +1552,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Equals"
@@ -1581,7 +1581,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Get translate"
@@ -1624,7 +1624,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Interpret"
@@ -1653,7 +1653,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Inverse"
@@ -1688,7 +1688,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Move then"
@@ -1723,7 +1723,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Multiply"
@@ -1756,7 +1756,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Multiply4x4"
@@ -1790,7 +1790,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Normalize rotation"
@@ -1823,7 +1823,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Not equals"
@@ -1851,7 +1851,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Perspective"
@@ -1889,7 +1889,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Rotate"
@@ -1922,7 +1922,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Rotate axis"
@@ -1950,7 +1950,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Rotate x"
@@ -1978,7 +1978,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Rotate y"
@@ -2006,7 +2006,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Rotate z"
@@ -2044,7 +2044,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Scale"
@@ -2082,7 +2082,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Skew"
@@ -2110,7 +2110,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Skew x"
@@ -2138,7 +2138,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Skew y"
@@ -2177,7 +2177,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Then move"
@@ -2210,7 +2210,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Then scale"
@@ -2248,7 +2248,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Translate"
@@ -2277,7 +2277,7 @@
         }
       },
       "require": {
-        "famous/core/Transform": "0.x.x"
+        "famo.us/core/Transform": "0.x.x"
       },
       "phrases": {
         "active": "Transpose"

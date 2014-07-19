@@ -7,7 +7,7 @@
     "active": "Modifier"
   },
   "require": {
-    "famous/core/Modifier": "0.x.x"
+    "famo.us/core/Modifier": "0.x.x"
   },
   "ports": {
     "input": {

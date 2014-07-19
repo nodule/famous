@@ -7,7 +7,7 @@
     "active": "Input surface"
   },
   "require": {
-    "famous/surfaces/InputSurface": "0.x.x"
+    "famo.us/surfaces/InputSurface": "0.x.x"
   },
   "ports": {
     "input": {

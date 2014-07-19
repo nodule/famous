@@ -7,7 +7,7 @@
     "active": "Canvas surface"
   },
   "require": {
-    "famous/surfaces/CanvasSurface": "0.x.x"
+    "famo.us/surfaces/CanvasSurface": "0.x.x"
   },
   "ports": {
     "input": {
