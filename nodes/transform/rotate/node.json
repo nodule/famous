@@ -1,0 +1,37 @@
+{
+  "name": "rotate",
+  "ns": "transform",
+  "title": "Rotate",
+  "description": "Return a Transform which represents composed clockwise\n   rotations along each of the axes. Equivalent to the result of\n   Matrix.multiply(rotateX(phi), rotateY(theta), rotateZ(psi)).\n",
+  "phrases": {
+    "active": "Rotate"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "phi": {
+        "type": "number",
+        "title": "Phi",
+        "description": "radians to rotate about the positive x axis"
+      },
+      "theta": {
+        "type": "number",
+        "title": "Theta",
+        "description": "radians to rotate about the positive y axis"
+      },
+      "psi": {
+        "type": "number",
+        "title": "Psi",
+        "description": "radians to rotate about the positive z axis"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

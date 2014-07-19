@@ -1,0 +1,32 @@
+{
+  "name": "thenScale",
+  "ns": "transform",
+  "title": "Then scale",
+  "description": "Return a Transform scaled by a vector in each\n   dimension. This is a more performant equivalent to the result of\n\n   Transform.multiply(Transform.scale(s[0], s[1], s[2]), m).\n",
+  "phrases": {
+    "active": "Then scale"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "m": {
+        "type": "array",
+        "title": "M",
+        "description": "a matrix"
+      },
+      "s": {
+        "type": "array",
+        "title": "S",
+        "description": "delta vector (array of floats &&    array.length == 3)"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

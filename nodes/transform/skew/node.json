@@ -1,0 +1,37 @@
+{
+  "name": "skew",
+  "ns": "transform",
+  "title": "Skew",
+  "description": "Return a Transform representation of a skew transformation\n",
+  "phrases": {
+    "active": "Skew"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "phi": {
+        "type": "number",
+        "title": "Phi",
+        "description": "scale factor skew in the x axis"
+      },
+      "theta": {
+        "type": "number",
+        "title": "Theta",
+        "description": "scale factor skew in the y axis"
+      },
+      "psi": {
+        "type": "number",
+        "title": "Psi",
+        "description": "scale factor skew in the z axis"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

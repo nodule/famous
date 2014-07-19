@@ -1,0 +1,32 @@
+{
+  "name": "multiply4x4",
+  "ns": "transform",
+  "title": "Multiply4x4",
+  "description": "Multiply two or more Transform matrix types to return a Transform matrix.\n",
+  "phrases": {
+    "active": "Multiply4x4"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transformA": {
+        "type": "array",
+        "title": "Transform A",
+        "description": "left Transform"
+      },
+      "transformB": {
+        "type": "array",
+        "title": "Transform B",
+        "description": "right Transform"
+      }
+    },
+    "output": {
+      "out": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "perspective",
+  "ns": "transform",
+  "title": "Perspective",
+  "description": "Returns a perspective Transform matrix\n",
+  "phrases": {
+    "active": "Perspective"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "focus_z": {
+        "type": "number",
+        "title": "Focus z",
+        "description": "z position of focal point"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

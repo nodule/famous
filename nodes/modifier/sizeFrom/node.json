@@ -1,0 +1,28 @@
+{
+  "name": "sizeFrom",
+  "ns": "modifier",
+  "title": "Size from",
+  "description": "Set function, object, or numerical array to provide size, as [width, height].\n",
+  "phrases": {
+    "active": "Size from"
+  },
+  "ports": {
+    "input": {
+      "size": {
+        "type": "any",
+        "title": "Size",
+        "description": "provider object"
+      },
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    },
+    "output": {
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    }
+  }
+}

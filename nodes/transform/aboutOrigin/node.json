@@ -1,0 +1,32 @@
+{
+  "name": "aboutOrigin",
+  "ns": "transform",
+  "title": "About origin",
+  "description": "Return a Transform which represents a transform matrix applied about\na separate origin point.\n",
+  "phrases": {
+    "active": "About origin"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "origin": {
+        "type": "array",
+        "title": "Origin",
+        "description": "origin point to apply matrix"
+      },
+      "matrix": {
+        "type": "array",
+        "title": "Matrix",
+        "description": "matrix to apply"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

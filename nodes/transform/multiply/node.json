@@ -1,0 +1,34 @@
+{
+  "name": "multiply",
+  "ns": "famous",
+  "title": "Multiply",
+  "description": "Fast-multiply two or more Transform matrix types to return a\n   Matrix, assuming bottom row on each is [0 0 0 1].\n",
+  "phrases": {
+    "active": "Multiply"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transformA": {
+        "type": "array",
+        "title": "A",
+        "description": "left Transform",
+        "async": true
+      },
+      "transformB": {
+        "type": "array",
+        "title": "B",
+        "description": "right Transform",
+        "async": true
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

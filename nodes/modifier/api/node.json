@@ -1,0 +1,48 @@
+{
+  "name": "api",
+  "ns": "modifier",
+  "title": "Modifier",
+  "description": "A collection of visual changes to be\n   applied to another renderable component. This collection includes a\n   transform matrix, an opacity constant, a size, an origin specifier.\n   Modifier objects can be added to any RenderNode or object\n   capable of displaying renderables.  The Modifier's children and descendants\n   are transformed by the amounts specified in the Modifier's properties.\n",
+  "phrases": {
+    "active": "Modifier"
+  },
+  "require": {
+    "famous/core/Modifier": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "options": {
+        "type": "object",
+        "title": "Options",
+        "description": "overrides of default options",
+        "properties": {
+           "transform": {
+             "type": "array",
+             "title": "Transform",
+             "description": "affine transformation matrix"
+           },
+           "opacity": {
+             "type": "number",
+             "title": "Opacity"
+           },
+           "Origin": {
+             "type": "array",
+             "title": "Origin",
+             "description": "origin adjustment"
+           },
+           "Size": {
+             "type": "array",
+             "title": "Size",
+             "description": "size to apply to descendants"
+           }
+        }
+      }
+    },
+    "output": {
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    }
+  }
+}

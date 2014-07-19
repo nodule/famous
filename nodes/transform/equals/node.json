@@ -1,0 +1,32 @@
+{
+  "name": "equals",
+  "ns": "transform",
+  "title": "Equals",
+  "description": "Determine if two Transforms are component-wise equal\n  Warning: breaks on perspective Transforms\n",
+  "phrases": {
+    "active": "Equals"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transformA": {
+        "type": "array",
+        "title": "Transform A",
+        "description": "matrix"
+      },
+      "transformB": {
+        "type": "array",
+        "title": "Transform B",
+        "description": "matrix"
+      }
+    },
+    "output": {
+      "out": {
+        "type": "boolean",
+        "title": "Boolean"
+      }
+    }
+  }
+}

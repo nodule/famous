@@ -1,0 +1,37 @@
+{
+  "name": "average",
+  "ns": "transform",
+  "title": "Average",
+  "description": "Weighted average between two matrices by averaging their\n    translation, rotation, scale, skew components.\n    f(M1,M2,t) = (1 - t) * M1 + t * M2\n",
+  "phrases": {
+    "active": "Average"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transform1": {
+        "type": "array",
+        "title": "Matrix 1",
+        "description": "f(M1,M2,0) = M1"
+      },
+      "transform2": {
+        "type": "array",
+        "title": "Matrix 2",
+        "description": "f(M1,M2,1) = M2"
+      },
+      "weight": {
+        "type": "number",
+        "title": "Weight",
+        "default": 0.5
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

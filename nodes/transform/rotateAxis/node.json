@@ -1,0 +1,32 @@
+{
+  "name": "rotateAxis",
+  "ns": "transform",
+  "title": "Rotate axis",
+  "description": "Return a Transform which represents an axis-angle rotation\n",
+  "phrases": {
+    "active": "Rotate axis"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "v": {
+        "type": "array",
+        "title": "V",
+        "description": "unit vector representing the axis to rotate about"
+      },
+      "theta": {
+        "type": "number",
+        "title": "Theta",
+        "description": "radians to rotate clockwise about the axis"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

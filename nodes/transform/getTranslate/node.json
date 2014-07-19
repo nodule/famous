@@ -1,0 +1,28 @@
+{
+  "name": "getTranslate",
+  "ns": "transform",
+  "title": "Get translate",
+  "description": "Return translation vector component of given Transform\n",
+  "phrases": {
+    "active": "Get translate"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transform": {
+        "type": "array",
+        "title": "Transform",
+        "description": "Transform"
+      }
+    },
+    "output": {
+      "translate": {
+        "type": "array",
+        "title": "Translate",
+        "description": "the translation vector [t_x, t_y, t_z]"
+      }
+    }
+  }
+}

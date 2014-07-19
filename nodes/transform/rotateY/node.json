@@ -1,0 +1,27 @@
+{
+  "name": "rotateY",
+  "ns": "transform",
+  "title": "Rotate y",
+  "description": "Return a Transform which represents a clockwise\n   rotation around the y axis.\n",
+  "phrases": {
+    "active": "Rotate y"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "theta": {
+        "type": "number",
+        "title": "Theta",
+        "description": "radians"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

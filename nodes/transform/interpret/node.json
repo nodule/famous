@@ -1,0 +1,42 @@
+{
+  "name": "interpret",
+  "ns": "transform",
+  "title": "Interpret",
+  "description": "Decompose Transform into separate .translate, .rotate, .scale,\n   and .skew components.\n",
+  "phrases": {
+    "active": "Interpret"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transform": {
+        "type": "array",
+        "title": "Transform",
+        "description": "transform matrix"
+      }
+    },
+    "output": {
+      "out": {
+        "type": "object",
+        "title": "Object",
+        "description": "matrix spec object with component matrices .translate,    .rotate, .scale, .skew",
+        "properties": {
+          "translate": {
+            "type": "array"
+          },
+          "rotate": {
+            "type": "array"
+          },
+          "scale": {
+            "type": "array"
+          },
+          "skew": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  }
+}

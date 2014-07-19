@@ -1,0 +1,28 @@
+{
+  "name": "inverse",
+  "ns": "translate",
+  "title": "Inverse",
+  "description": "Return inverse affine transform for given Transform.\n  Note: This assumes m[3] = m[7] = m[11] = 0, and m[15] = 1.\n  Will provide incorrect results if not invertible or preconditions not met.\n",
+  "phrases": {
+    "active": "Inverse"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transform": {
+        "type": "array",
+        "title": "Transform",
+        "description": "Transform"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform",
+        "description": ""
+      }
+    }
+  }
+}

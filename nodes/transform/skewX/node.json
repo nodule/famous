@@ -1,0 +1,27 @@
+{
+  "name": "skewX",
+  "ns": "transform",
+  "title": "Skew x",
+  "description": "Return a Transform representation of a skew in the x-direction\n",
+  "phrases": {
+    "active": "Skew x"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "angle": {
+        "type": "number",
+        "title": "Angle",
+        "description": "the angle between the top and left sides"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

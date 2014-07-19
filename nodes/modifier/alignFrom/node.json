@@ -1,0 +1,28 @@
+{
+  "name": "alignFrom",
+  "ns": "modifier",
+  "title": "Align from",
+  "description": "Set function, object, or numerical array to provide align, as [x,y],\n  where x and y are in the range [0,1].\n",
+  "phrases": {
+    "active": "Align from"
+  },
+  "ports": {
+    "input": {
+      "align": {
+        "type": "any",
+        "title": "Align",
+        "description": "provider object"
+      },
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    },
+    "output": {
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    }
+  }
+}

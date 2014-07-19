@@ -1,0 +1,28 @@
+{
+  "name": "transpose",
+  "ns": "transform",
+  "title": "Transpose",
+  "description": "Returns the transpose of a 4x4 matrix\n",
+  "phrases": {
+    "active": "Transpose"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transform": {
+        "type": "array",
+        "title": "Transform",
+        "description": "matrix"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform",
+        "description": "the resulting transposed matrix"
+      }
+    }
+  }
+}

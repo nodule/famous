@@ -1,0 +1,34 @@
+{
+  "name": "modify",
+  "ns": "modifier",
+  "title": "Modify",
+  "description": "Return render spec for this Modifier, applying to the provided\n   target component.  This is similar to render() for Surfaces.\n",
+  "phrases": {
+    "active": "Modify"
+  },
+  "ports": {
+    "input": {
+      "target": {
+        "type": "object",
+        "title": "Target",
+        "description": "(already rendered) render spec to    which to apply the transform.",
+        "async": true
+      },
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    },
+    "output": {
+      "object": {
+        "type": "object",
+        "title": "Object",
+        "description": "render spec for this Modifier, including the    provided target"
+      },
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    }
+  }
+}

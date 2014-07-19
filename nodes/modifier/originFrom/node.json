@@ -1,0 +1,28 @@
+{
+  "name": "originFrom",
+  "ns": "modifier",
+  "title": "Origin from",
+  "description": "Set function, object, or numerical array to provide origin, as [x,y],\n  where x and y are in the range [0,1].\n",
+  "phrases": {
+    "active": "Origin from"
+  },
+  "ports": {
+    "input": {
+      "origin": {
+        "type": "any",
+        "title": "Origin",
+        "description": "provider object"
+      },
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    },
+    "output": {
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    }
+  }
+}

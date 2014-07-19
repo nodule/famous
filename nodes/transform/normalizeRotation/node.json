@@ -1,0 +1,33 @@
+{
+  "name": "normalizeRotation",
+  "ns": "transform",
+  "title": "Normalize rotation",
+  "description": "Constrain angle-trio components to range of [-pi, pi).\n",
+  "phrases": {
+    "active": "Normalize rotation"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "rotation": {
+        "type": "array",
+        "title": "Rotation",
+        "description": "phi, theta, psi (array of floats    && array.length == 3)"
+      }
+    },
+    "output": {
+      "out": {
+        "type": "array",
+        "title": "Array",
+        "description": "new phi, theta, psi triplet    (array of floats && array.length == 3)",
+        "items": {
+          "type": "number"
+        },
+        "minItems": 3,
+        "maxItems": 3
+      }
+    }
+  }
+}

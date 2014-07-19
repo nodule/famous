@@ -1,0 +1,27 @@
+{
+  "name": "rotateZ",
+  "ns": "transform",
+  "title": "Rotate z",
+  "description": "Return a Transform which represents a clockwise\n   rotation around the z axis.\n",
+  "phrases": {
+    "active": "Rotate z"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "theta": {
+        "type": "number",
+        "title": "Theta",
+        "description": "radians"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "opacityFrom",
+  "ns": "modifier",
+  "title": "Opacity from",
+  "description": "Set function, object, or number to provide opacity, in range [0,1].\n",
+  "phrases": {
+    "active": "Opacity from"
+  },
+  "ports": {
+    "input": {
+      "opacity": {
+        "type": "any",
+        "title": "Opacity",
+        "description": "provider object"
+      },
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    },
+    "output": {
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "build",
+  "ns": "transform",
+  "title": "Build",
+  "description": "Compose .translate, .rotate, .scale, .skew components into\nTransform matrix\n",
+  "phrases": {
+    "active": "Build"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "spec": {
+        "type": "object",
+        "title": "Matrix Spec",
+        "description": "object with component matrices .translate,    .rotate, .scale, .skew",
+        "properties": {
+          "translate": {
+            "type": "array"
+          },
+          "rotate": {
+            "type": "array"
+          },
+          "scale": {
+            "type": "array"
+          },
+          "skey": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform",
+        "description": "composed transform"
+      }
+    }
+  }
+}

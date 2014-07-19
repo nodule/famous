@@ -1,0 +1,32 @@
+{
+  "name": "notEquals",
+  "ns": "transform",
+  "title": "Not equals",
+  "description": "Determine if two Transforms are component-wise unequal\n  Warning: breaks on perspective Transforms\n",
+  "phrases": {
+    "active": "Not equals"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "transformA": {
+        "type": "array",
+        "title": "Transform A",
+        "description": "matrix"
+      },
+      "transformB": {
+        "type": "array",
+        "title": "Transform B",
+        "description": "matrix"
+      }
+    },
+    "output": {
+      "out": {
+        "type": "boolean",
+        "title": "Boolean"
+      }
+    }
+  }
+}

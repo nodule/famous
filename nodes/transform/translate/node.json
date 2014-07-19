@@ -1,0 +1,37 @@
+{
+  "name": "translate",
+  "ns": "transform",
+  "title": "Translate",
+  "description": "Return a Transform which represents a translation by specified\n   amounts in each dimension.\n",
+  "phrases": {
+    "active": "Translate"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "x": {
+        "type": "number",
+        "title": "X",
+        "description": "x translation"
+      },
+      "y": {
+        "type": "number",
+        "title": "Y",
+        "description": "y translation"
+      },
+      "z": {
+        "type": "number",
+        "title": "Z",
+        "description": "z translation"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "moveThen",
+  "ns": "transform",
+  "title": "Move then",
+  "description": "Return a Transform matrix which represents the result of a transform matrix\n   applied after a move. This is faster than the equivalent multiply.\n   This is equivalent to the result of:\n\n   Transform.multiply(m, Transform.translate(t[0], t[1], t[2])).\n",
+  "phrases": {
+    "active": "Move then"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "vector": {
+        "type": "array",
+        "title": "Vector",
+        "description": "vector representing initial movement"
+      },
+      "matrix": {
+        "type": "array",
+        "title": "Matrix",
+        "description": "matrix to apply afterwards",
+        "async": true
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform",
+        "description": "the resulting matrix"
+      }
+    }
+  }
+}

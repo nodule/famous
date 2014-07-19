@@ -1,0 +1,37 @@
+{
+  "name": "scale",
+  "ns": "transform",
+  "title": "Scale",
+  "description": "Return a Transform which represents a scale by specified amounts\n   in each dimension.\n",
+  "phrases": {
+    "active": "Scale"
+  },
+  "require": {
+    "famous/core/Transform": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "x": {
+        "type": "number",
+        "title": "X",
+        "description": "x scale factor"
+      },
+      "y": {
+        "type": "number",
+        "title": "Y",
+        "description": "y scale factor"
+      },
+      "z": {
+        "type": "number",
+        "title": "Z",
+        "description": "z scale factor"
+      }
+    },
+    "output": {
+      "transform": {
+        "type": "array",
+        "title": "Transform"
+      }
+    }
+  }
+}

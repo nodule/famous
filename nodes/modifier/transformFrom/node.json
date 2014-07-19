@@ -1,0 +1,28 @@
+{
+  "name": "transformFrom",
+  "ns": "modifier",
+  "title": "Transform from",
+  "description": "Function, object, or static transform matrix which provides the transform.\n  This is evaluated on every tick of the engine.\n",
+  "phrases": {
+    "active": "Transform from"
+  },
+  "ports": {
+    "input": {
+      "transform": {
+        "type": "object",
+        "title": "Transform",
+        "description": "transform provider object"
+      },
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    },
+    "output": {
+      "modifier": {
+        "type": "Modifier",
+        "title": "Modifier"
+      }
+    }
+  }
+}
