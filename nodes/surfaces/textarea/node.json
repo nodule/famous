@@ -1,0 +1,84 @@
+{
+  "name": "textarea",
+  "ns": "surface",
+  "title": "Textarea surface",
+  "description": "A Famo.us surface in the form of an HTML textarea element.\n  This extends the Surface class.\n",
+  "phrases": {
+    "active": "Textarea surface"
+  },
+  "require": {
+    "famous/surfaces/TextareaSurface": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "options": {
+        "type": "object",
+        "title": "options",
+        "description": "default option overrides",
+        "properties": {
+           "size": {
+             "type": "array",
+             "title": "Size",
+             "description": "[width, height] in pixels"
+           },
+           "classes": {
+             "type": "array",
+             "title": "Classes",
+             "description": "CSS classes to set on inner content"
+           },
+           "properties": {
+             "type": "array",
+             "title": "Properties",
+             "description": "string dictionary of HTML attributes to set on target div"
+           },
+           "content": {
+             "type": "string",
+             "title": "Content",
+             "description": "inner (HTML) content of surface"
+           },
+           "name": {
+             "type": "string",
+             "title": "Name",
+             "description": "specifies the name of textarea"
+           }
+        },
+        "placeholder": {
+          "type": "string",
+          "title": "Placeholder",
+          "description": "placeholder text hint that describes the expected value of an textarea element",
+          "async": true
+        },
+        "value": {
+          "type": "string",
+          "title": "Value",
+          "description": "value of text",
+          "async": true
+        },
+        "wrap": {
+          "type": "string",
+          "title": "Wrap",
+          "description": "specify 'hard' or 'soft' wrap for textarea",
+          "async": true
+        },
+        "cols": {
+          "type": "number",
+          "title": "cols",
+          "description": "number of columns in textarea",
+          "async": true
+        },
+        "rows": {
+          "type": "number",
+          "title": "rows",
+          "description": "number of rows in textarea",
+          "async": true
+        }
+      }
+    },
+    "output": {
+      "surface": {
+        "type": "TextareaSurface",
+        "title": "Surface"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "video",
+  "ns": "surface",
+  "title": "Video surface",
+  "description": "Creates a famous surface containing video content. Currently adding\n  controls and manipulating the video are not supported through the\n  surface interface, but can be accomplished via standard JavaScript\n  manipulation of the video DOM element.\n  This extends the Surface class.\n",
+  "phrases": {
+    "active": "Video surface"
+  },
+  "require": {
+    "famous/surfaces/VideoSurface": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "options": {
+        "type": "object",
+        "title": "options",
+        "description": "default option overrides",
+        "properties": {
+           "size": {
+             "type": "array",
+             "title": "Size",
+             "description": "[width, height] in pixels"
+           },
+           "classes": {
+             "type": "array",
+             "title": "Classes",
+             "description": "CSS classes to set on inner content"
+           },
+           "properties": {
+             "type": "array",
+             "title": "Properties",
+             "description": "string dictionary of HTML attributes to set on target div"
+           },
+           "content": {
+             "type": "string",
+             "title": "Content",
+             "description": "inner (HTML) content of surface"
+           },
+          "autoplay": {
+            "type": "boolean",
+            "title": "autoplay",
+            "description": "HTML autoplay"
+          }
+        }
+      },
+      "video_url": {
+        "type": "string",
+        "title": "Video url",
+        "description": "URL",
+        "async": true
+      }
+    },
+    "output": {
+      "surface": {
+        "type": "VideoSurface",
+        "title": "Surface"
+      }
+    }
+  }
+}

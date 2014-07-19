@@ -1,0 +1,28 @@
+{
+  "name": "add",
+  "ns": "surface",
+  "title": "Add Renderable to a Container surface",
+  "description": "Add renderables to this object's render tree",
+  "phrases": {
+    "active": "Adding renderable"
+  },
+  "ports": {
+    "input": {
+       "container": {
+         "type": "ContainerSurface",
+         "title": "Container Surface"
+       },
+       "renderable": {
+         "type": "Renderable",
+         "title": "Renderable object",
+         "async": true
+       }
+    },
+    "output": {
+      "render_node": {
+        "type": "RenderNode",
+        "title": "RenderNode wrapping this object, if not already a RenderNode"
+      }
+    }
+  }
+}

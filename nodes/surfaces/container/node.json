@@ -1,0 +1,44 @@
+{
+  "name": "container",
+  "ns": "surface",
+  "title": "Container surface",
+  "description": "ContainerSurface is an object designed to contain surfaces and\n  set properties to be applied to all of them at once.\n  This extends the Surface class.\n  A container surface will enforce these properties on the\n  surfaces it contains:\n\n  size (clips contained surfaces to its own width and height);\n\n  origin;\n\n  its own opacity and transform, which will be automatically\n  applied to  all Surfaces contained directly and indirectly.\n",
+  "phrases": {
+    "active": "Container surface"
+  },
+  "require": {
+    "famous/surfaces/ContainerSurface": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "options": {
+        "type": "object",
+        "title": "options",
+        "description": "default option overrides",
+        "properties": {
+           "size": {
+             "type": "array",
+             "title": "Size",
+             "description": "[width, height] in pixels"
+           },
+           "classes": {
+             "type": "array",
+             "title": "Classes",
+             "description": "CSS classes to set on inner content"
+           },
+           "properties": {
+             "type": "array",
+             "title": "Properties",
+             "description": "string dictionary of HTML attributes to set on target div"
+           }
+        }
+      }
+    },
+    "output": {
+      "surface": {
+        "type": "ContainerSurface",
+        "title": "Surface"
+      }
+    }
+  }
+}

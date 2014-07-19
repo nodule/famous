@@ -1,0 +1,98 @@
+{
+  "name": "input",
+  "ns": "surface",
+  "title": "Input surface",
+  "description": "A Famo.us surface in the form of an HTML input element.\n  This extends the Surface class.\n",
+  "phrases": {
+    "active": "Input surface"
+  },
+  "require": {
+    "famous/surfaces/InputSurface": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "options": {
+        "type": "object",
+        "title": "options",
+        "description": "default option overrides",
+        "properties": {
+           "size": {
+             "type": "array",
+             "title": "Size",
+             "description": "[width, height] in pixels"
+           },
+           "classes": {
+             "type": "array",
+             "title": "Classes",
+             "description": "CSS classes to set on inner content"
+           },
+           "properties": {
+             "type": "array",
+             "title": "Properties",
+             "description": "string dictionary of HTML attributes to set on target div"
+           },
+           "name": {
+             "type": "string",
+             "title": "Name",
+             "description": "Set the name attribute of the element"
+           },
+           "type": {
+             "type": "string",
+             "title": "Type",
+             "description": "specifies the type of element to display",
+             "enum": [
+               "button",
+               "checkbox",
+               "color",
+               "date",
+               "datetime",
+               "datetime-local",
+               "email",
+               "search",
+               "month",
+               "number",
+               "password",
+               "radio",
+               "range",
+               "tel",
+               "text",
+               "time",
+               "url",
+               "week"
+             ]
+           }
+        }
+      },
+      "placeholder": {
+        "type": "string",
+        "title": "Placeholder",
+        "description": "placeholder text hint that describes the expected value of an <input> element",
+        "async": true
+      },
+      "value": {
+        "type": "string",
+        "title": "Value",
+        "description": "value of text",
+        "async": true
+      },
+      "blur": {
+        "type": "any",
+        "title": "Blur",
+        "description": "Blur the current input, hiding the keyboard on mobile",
+        "async": true
+      },
+      "focus": {
+        "type": "any",
+        "title": "Focus",
+        "description": "Focus the current input, pulling up the keyboard on mobile",
+        "async": true
+      }
+    },
+    "output": {
+      "surface": {
+        "type": "InputSurface",
+        "title": "Surface"
+      }
+    }
+  }
+}

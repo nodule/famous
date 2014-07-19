@@ -1,0 +1,49 @@
+{
+  "name": "image",
+  "ns": "surface",
+  "title": "Image surface",
+  "description": "A surface containing image content.\n  This extends the Surface class.\n",
+  "phrases": {
+    "active": "Image surface"
+  },
+  "require": {
+    "famous/surfaces/ImageSurface": "0.x.x"
+  },
+  "ports": {
+    "input": {
+      "options": {
+        "type": "object",
+        "title": "options",
+        "description": "default option overrides",
+        "properties": {
+           "size": {
+             "type": "array",
+             "title": "Size",
+             "description": "[width, height] in pixels"
+           },
+           "classes": {
+             "type": "array",
+             "title": "Classes",
+             "description": "CSS classes to set on inner content"
+           },
+           "properties": {
+             "type": "array",
+             "title": "Properties",
+             "description": "string dictionary of HTML attributes to set on target div"
+           }
+        }
+      },
+      "image_url": {
+        "type": "string",
+        "title": "Image url",
+        "async": true
+      }
+    },
+    "output": {
+      "surface": {
+        "type": "ImageSurface",
+        "title": "Surface"
+      }
+    }
+  }
+}
