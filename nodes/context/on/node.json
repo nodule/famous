@@ -1,0 +1,40 @@
+{
+  "name": "on",
+  "ns": "context",
+  "title": "On",
+  "description": "Bind a callback function to an event type handled by this object.\n",
+  "phrases": {
+    "active": "On"
+  },
+  "ports": {
+    "input": {
+      "type": {
+        "type": "string",
+        "title": "Type",
+        "description": "event type key (for example, 'click')",
+        "async": true
+      },
+      "object)}": {
+        "type": "function(string",
+        "title": "Object)}",
+        "description": "handler callback",
+        "async": true
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    },
+    "output": {
+      "event_handler": {
+        "type": "EventHandler",
+        "title": "Event handler",
+        "description": "this"
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    }
+  }
+}

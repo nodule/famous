@@ -13,6 +13,331 @@
     {
       "ports": {
         "input": {
+          "obj": {
+            "type": "object",
+            "title": "Obj",
+            "description": "renderable object",
+            "async": true
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "render_node": {
+            "type": "RenderNode",
+            "title": "Render node",
+            "description": "RenderNode wrapping this object, if not already a RenderNode"
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Add"
+      },
+      "description": "Add renderables to this Context's render tree.\n",
+      "title": "Add",
+      "ns": "context",
+      "name": "add",
+      "fn": "on.input.obj = function() {\n  output( { render_node: input.context.add(data), context: input.context })\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "event type key (for example, 'click')",
+            "async": true
+          },
+          "event": {
+            "type": "object",
+            "title": "Event",
+            "description": "event data",
+            "async": true
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler",
+            "description": "this"
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Emit"
+      },
+      "description": "Trigger an event, sending to all downstream handlers\n  listening for provided 'type' key.\n",
+      "title": "Emit",
+      "ns": "context",
+      "name": "emit",
+      "fn": "on.input.type = function() {\n  output( { event_handler: input.context.emit(data), context: input.context })\n};\non.input.event = function() {\n  output( { : input.context.emit(data), context: input.context })\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "container": {
+            "type": "Node",
+            "title": "Container",
+            "description": "Element to which content will be migrated"
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Migrate"
+      },
+      "description": "Move this Context to another containing document element.\n",
+      "title": "Migrate",
+      "ns": "context",
+      "name": "migrate",
+      "fn": "on.input.container = function() {\n  input.context.migrate(data);\n  output( { context: input.context });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "event type key (for example, 'click')",
+            "async": true
+          },
+          "object)}": {
+            "type": "function(string",
+            "title": "Object)}",
+            "description": "handler callback",
+            "async": true
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler",
+            "description": "this"
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "On"
+      },
+      "description": "Bind a callback function to an event type handled by this object.\n",
+      "title": "On",
+      "ns": "context",
+      "name": "on",
+      "fn": "on.input.type = function() {\n  output( { event_handler: input.context.on(data), context: input.context })\n};\non.input.object)} = function() {\n  output( { : input.context.on(data), context: input.context })\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "target": {
+            "type": "EventHandler",
+            "title": "Target",
+            "description": "event handler target object",
+            "async": true
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler",
+            "description": "passed event handler"
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Pipe"
+      },
+      "description": "Add event handler object to set of downstream handlers.\n",
+      "title": "Pipe",
+      "ns": "context",
+      "name": "pipe",
+      "fn": "on.input.target = function() {\n  output( { event_handler: input.context.pipe(data), context: input.context })\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "event type key (for example, 'click')",
+            "async": true
+          },
+          "handler": {
+            "type": "function",
+            "title": "Handler",
+            "description": "function object to remove",
+            "async": true
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler",
+            "description": "internal event handler object (for chaining)"
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Remove listener"
+      },
+      "description": "Unbind an event by type and handler.\n  This undoes the work of \"on\".\n",
+      "title": "Remove listener",
+      "ns": "context",
+      "name": "removeListener",
+      "fn": "on.input.type = function() {\n  output( { event_handler: input.context.removeListener(data), context: input.context })\n};\non.input.handler = function() {\n  output( { : input.context.removeListener(data), context: input.context })\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "perspective": {
+            "type": "number",
+            "title": "Perspective",
+            "description": "in pixels"
+          },
+          "[transition]": {
+            "type": "object",
+            "title": "[transition]",
+            "description": "Transitionable object for applying the change"
+          },
+          "callback": {
+            "type": "function(Object)",
+            "title": "Callback",
+            "description": "function called on completion of transition"
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Set perspective"
+      },
+      "description": "Set current perspective of this context in pixels.\n",
+      "title": "Set perspective",
+      "ns": "context",
+      "name": "setPerspective",
+      "fn": "on.input.perspective = function() {\n  input.context.setPerspective(data);\n  output( { context: input.context });\n};\non.input.[transition] = function() {\n  input.context.setPerspective(data);\n  output( { context: input.context });\n};\non.input.callback = function() {\n  input.context.setPerspective(data);\n  output( { context: input.context });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "size": {
+            "type": "array",
+            "title": "Size",
+            "description": "[width, height]. If unspecified, use size of root document element."
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Set size"
+      },
+      "description": "Sets viewport size for Context.\n",
+      "title": "Set size",
+      "ns": "context",
+      "name": "setSize",
+      "fn": "on.input.size = function() {\n  input.context.setSize(data);\n  output( { context: input.context });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "target": {
+            "type": "EventHandler",
+            "title": "Target",
+            "description": "target handler object",
+            "async": true
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        },
+        "output": {
+          "event_handler": {
+            "type": "EventHandler",
+            "title": "Event handler",
+            "description": "provided target"
+          },
+          "context": {
+            "type": "Context",
+            "title": "Context"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Unpipe"
+      },
+      "description": "Remove handler object from set of downstream handlers.\n  Undoes work of \"pipe\".\n",
+      "title": "Unpipe",
+      "ns": "context",
+      "name": "unpipe",
+      "fn": "on.input.target = function() {\n  output( { event_handler: input.context.unpipe(data), context: input.context })\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
           "el": {
             "type": "Node",
             "title": "El",
@@ -789,7 +1114,8 @@
                   "type": "number"
                 },
                 "minItems": 2,
-                "maxItems": 2
+                "maxItems": 2,
+                "required": false
               },
               "classes": {
                 "type": "array",
@@ -797,7 +1123,8 @@
                 "description": "CSS classes to set on inner content",
                 "items": {
                   "type": "string"
-                }
+                },
+                "required": false
               },
               "properties": {
                 "type": "object",
@@ -812,7 +1139,8 @@
                     "type": "string",
                     "title": "Value"
                   }
-                }
+                },
+                "required": false
               }
             }
           },

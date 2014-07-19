@@ -1,0 +1,38 @@
+{
+  "name": "setPerspective",
+  "ns": "context",
+  "title": "Set perspective",
+  "description": "Set current perspective of this context in pixels.\n",
+  "phrases": {
+    "active": "Set perspective"
+  },
+  "ports": {
+    "input": {
+      "perspective": {
+        "type": "number",
+        "title": "Perspective",
+        "description": "in pixels"
+      },
+      "[transition]": {
+        "type": "object",
+        "title": "[transition]",
+        "description": "Transitionable object for applying the change"
+      },
+      "callback": {
+        "type": "function(Object)",
+        "title": "Callback",
+        "description": "function called on completion of transition"
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    },
+    "output": {
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    }
+  }
+}

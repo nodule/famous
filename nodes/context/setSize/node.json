@@ -1,0 +1,28 @@
+{
+  "name": "setSize",
+  "ns": "context",
+  "title": "Set size",
+  "description": "Sets viewport size for Context.\n",
+  "phrases": {
+    "active": "Set size"
+  },
+  "ports": {
+    "input": {
+      "size": {
+        "type": "array",
+        "title": "Size",
+        "description": "[width, height]. If unspecified, use size of root document element."
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    },
+    "output": {
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "removeListener",
+  "ns": "context",
+  "title": "Remove listener",
+  "description": "Unbind an event by type and handler.\n  This undoes the work of \"on\".\n",
+  "phrases": {
+    "active": "Remove listener"
+  },
+  "ports": {
+    "input": {
+      "type": {
+        "type": "string",
+        "title": "Type",
+        "description": "event type key (for example, 'click')",
+        "async": true
+      },
+      "handler": {
+        "type": "function",
+        "title": "Handler",
+        "description": "function object to remove",
+        "async": true
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    },
+    "output": {
+      "event_handler": {
+        "type": "EventHandler",
+        "title": "Event handler",
+        "description": "internal event handler object (for chaining)"
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    }
+  }
+}

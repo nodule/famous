@@ -1,0 +1,34 @@
+{
+  "name": "pipe",
+  "ns": "context",
+  "title": "Pipe",
+  "description": "Add event handler object to set of downstream handlers.\n",
+  "phrases": {
+    "active": "Pipe"
+  },
+  "ports": {
+    "input": {
+      "target": {
+        "type": "EventHandler",
+        "title": "Target",
+        "description": "event handler target object",
+        "async": true
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    },
+    "output": {
+      "event_handler": {
+        "type": "EventHandler",
+        "title": "Event handler",
+        "description": "passed event handler"
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    }
+  }
+}

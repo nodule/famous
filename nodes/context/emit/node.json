@@ -1,0 +1,40 @@
+{
+  "name": "emit",
+  "ns": "context",
+  "title": "Emit",
+  "description": "Trigger an event, sending to all downstream handlers\n  listening for provided 'type' key.\n",
+  "phrases": {
+    "active": "Emit"
+  },
+  "ports": {
+    "input": {
+      "type": {
+        "type": "string",
+        "title": "Type",
+        "description": "event type key (for example, 'click')",
+        "async": true
+      },
+      "event": {
+        "type": "object",
+        "title": "Event",
+        "description": "event data",
+        "async": true
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    },
+    "output": {
+      "event_handler": {
+        "type": "EventHandler",
+        "title": "Event handler",
+        "description": "this"
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    }
+  }
+}

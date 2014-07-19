@@ -1,0 +1,28 @@
+{
+  "name": "migrate",
+  "ns": "context",
+  "title": "Migrate",
+  "description": "Move this Context to another containing document element.\n",
+  "phrases": {
+    "active": "Migrate"
+  },
+  "ports": {
+    "input": {
+      "container": {
+        "type": "Node",
+        "title": "Container",
+        "description": "Element to which content will be migrated"
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    },
+    "output": {
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    }
+  }
+}

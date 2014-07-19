@@ -1,0 +1,34 @@
+{
+  "name": "add",
+  "ns": "context",
+  "title": "Add",
+  "description": "Add renderables to this Context's render tree.\n",
+  "phrases": {
+    "active": "Add"
+  },
+  "ports": {
+    "input": {
+      "obj": {
+        "type": "object",
+        "title": "Obj",
+        "description": "renderable object",
+        "async": true
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    },
+    "output": {
+      "render_node": {
+        "type": "RenderNode",
+        "title": "Render node",
+        "description": "RenderNode wrapping this object, if not already a RenderNode"
+      },
+      "context": {
+        "type": "Context",
+        "title": "Context"
+      }
+    }
+  }
+}
