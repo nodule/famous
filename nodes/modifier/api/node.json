@@ -11,11 +11,6 @@
   },
   "ports": {
     "input": {
-       "transform": {
-         "type": "object",
-         "title": "Transform",
-         "description": "affine transformation matrix"
-       },
        "opacity": {
          "type": "number",
          "title": "Opacity"
@@ -32,12 +27,23 @@
          "items": {
            "type": "number"
          }
-       }
+       },
+        "transform": {
+          "type": "object",
+          "title": "Transform",
+          "description": "affine transformation matrix",
+          "required": false
+        }
     },
     "output": {
       "modifier": {
         "type": "Modifier",
         "title": "Modifier"
+      },
+      "animate": {
+        "type": "string",
+        "title": "Animate",
+        "description": "If transform is not set, this will fire for each transform"
       }
     }
   }

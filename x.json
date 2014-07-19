@@ -763,11 +763,6 @@
     {
       "ports": {
         "input": {
-          "transform": {
-            "type": "object",
-            "title": "Transform",
-            "description": "affine transformation matrix"
-          },
           "opacity": {
             "type": "number",
             "title": "Opacity"
@@ -784,12 +779,23 @@
             "items": {
               "type": "number"
             }
+          },
+          "transform": {
+            "type": "object",
+            "title": "Transform",
+            "description": "affine transformation matrix",
+            "required": false
           }
         },
         "output": {
           "modifier": {
             "type": "Modifier",
             "title": "Modifier"
+          },
+          "animate": {
+            "type": "string",
+            "title": "Animate",
+            "description": "If transform is not set, this will fire for each transform"
           }
         }
       },
@@ -803,7 +809,7 @@
       "title": "Modifier",
       "ns": "modifier",
       "name": "api",
-      "fn": "output = function() {\n  var opts =  { origin: input.origin, transform: input.transform };\n  if(input.size) opts.size = size;\n  if(input.opacity) opts.opacity = size;\n  cb( {\n    modifier: new modifier(opts)\n  });\n  done();\n};\n"
+      "fn": "output = function() {\n\n  var opts =  {\n    origin: input.origin,\n  };\n\n  if(input.opacity) opts.opacity = size;\n\n  if(input.transform) {\n    opts.transform = input.transform;\n  } else {\n    opts.transform: function() {\n      // kinda like a forward bang\n      // If transform is set this will output nothing.\n      cb( { animate: '' });\n    }\n  }\n  if(input.size) opts.size = size;\n  if(input.opacity) opts.opacity = size;\n\n  cb( {\n    modifier: new modifier(opts)\n  });\n\n  done();\n};\n"
     },
     {
       "ports": {
