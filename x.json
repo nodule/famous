@@ -809,7 +809,7 @@
       "title": "Modifier",
       "ns": "modifier",
       "name": "api",
-      "fn": "output = function() {\n\n  var opts =  {\n    origin: input.origin,\n  };\n\n  if(input.opacity) opts.opacity = size;\n\n  if(input.transform) {\n    opts.transform = input.transform;\n  } else {\n    opts.transform: function() {\n      // kinda like a forward bang\n      // If transform is set this will output nothing.\n      cb( { animate: '' });\n    }\n  }\n  if(input.size) opts.size = size;\n  if(input.opacity) opts.opacity = size;\n\n  cb( {\n    modifier: new modifier(opts)\n  });\n\n  done();\n};\n"
+      "fn": "output = function() {\n\n  var opts =  {\n    origin: input.origin,\n  };\n\n  if(input.opacity) opts.opacity = size;\n\n  if(input.transform) {\n    opts.transform = input.transform;\n  } else {\n    opts.transform: function() {\n      cb( { animate: '' });\n    }\n  }\n  if(input.size) opts.size = size;\n  if(input.opacity) opts.opacity = size;\n\n  cb( {\n    modifier: new modifier(opts)\n  });\n\n  done();\n};\n"
     },
     {
       "ports": {
@@ -1053,7 +1053,7 @@
       "title": "Canvas surface",
       "ns": "surface",
       "name": "canvas",
-      "fn": "state = new canvas_surface(input.options);\n/*\non.input.context_id = function() {\n  input.canvassurface.CanvasSurface(data);\n  output( { canvassurface: input.canvassurface });\n};\n*/\noutput({ surface: state });\n"
+      "fn": "state = new canvas_surface(input.options);\noutput({ surface: state });\n"
     },
     {
       "ports": {

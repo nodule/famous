@@ -10,8 +10,6 @@ output = function() {
     opts.transform = input.transform;
   } else {
     opts.transform: function() {
-      // kinda like a forward bang
-      // If transform is set this will output nothing.
       cb( { animate: '' });
     }
   }
