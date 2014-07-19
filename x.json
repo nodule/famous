@@ -763,33 +763,26 @@
     {
       "ports": {
         "input": {
-          "options": {
+          "transform": {
             "type": "object",
-            "title": "Options",
-            "description": "overrides of default options",
-            "properties": {
-              "transform": {
-                "type": "object",
-                "title": "Transform",
-                "description": "affine transformation matrix"
-              },
-              "opacity": {
-                "type": "number",
-                "title": "Opacity"
-              },
-              "Origin": {
-                "type": "object",
-                "title": "Origin",
-                "description": "origin adjustment"
-              },
-              "Size": {
-                "type": "array",
-                "title": "Size",
-                "description": "size to apply to descendants",
-                "items": {
-                  "type": "number"
-                }
-              }
+            "title": "Transform",
+            "description": "affine transformation matrix"
+          },
+          "opacity": {
+            "type": "number",
+            "title": "Opacity"
+          },
+          "Origin": {
+            "type": "object",
+            "title": "Origin",
+            "description": "origin adjustment"
+          },
+          "Size": {
+            "type": "array",
+            "title": "Size",
+            "description": "size to apply to descendants",
+            "items": {
+              "type": "number"
             }
           }
         },
@@ -810,7 +803,7 @@
       "title": "Modifier",
       "ns": "modifier",
       "name": "api",
-      "fn": "output = function() {\n  cb( { modifier: new modifier(input.options) });\n  done();\n};\n"
+      "fn": "output = function() {\n  var opts =  { origin: input.origin, transform: input.transform };\n  if(input.size) opts.size = size;\n  if(input.opacity) opts.opacity = size;\n  cb( {\n    modifier: new modifier(opts)\n  });\n  done();\n};\n"
     },
     {
       "ports": {

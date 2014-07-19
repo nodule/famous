@@ -11,35 +11,28 @@
   },
   "ports": {
     "input": {
-      "options": {
-        "type": "object",
-        "title": "Options",
-        "description": "overrides of default options",
-        "properties": {
-           "transform": {
-             "type": "object",
-             "title": "Transform",
-             "description": "affine transformation matrix"
-           },
-           "opacity": {
-             "type": "number",
-             "title": "Opacity"
-           },
-           "Origin": {
-             "type": "object",
-             "title": "Origin",
-             "description": "origin adjustment"
-           },
-           "Size": {
-             "type": "array",
-             "title": "Size",
-             "description": "size to apply to descendants",
-             "items": {
-               "type": "number"
-             }
-           }
-        }
-      }
+       "transform": {
+         "type": "object",
+         "title": "Transform",
+         "description": "affine transformation matrix"
+       },
+       "opacity": {
+         "type": "number",
+         "title": "Opacity"
+       },
+       "Origin": {
+         "type": "object",
+         "title": "Origin",
+         "description": "origin adjustment"
+       },
+       "Size": {
+         "type": "array",
+         "title": "Size",
+         "description": "size to apply to descendants",
+         "items": {
+           "type": "number"
+         }
+       }
     },
     "output": {
       "modifier": {
