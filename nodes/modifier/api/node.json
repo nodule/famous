@@ -17,7 +17,7 @@
         "description": "overrides of default options",
         "properties": {
            "transform": {
-             "type": "array",
+             "type": "object",
              "title": "Transform",
              "description": "affine transformation matrix"
            },
@@ -26,14 +26,17 @@
              "title": "Opacity"
            },
            "Origin": {
-             "type": "array",
+             "type": "object",
              "title": "Origin",
              "description": "origin adjustment"
            },
            "Size": {
              "type": "array",
              "title": "Size",
-             "description": "size to apply to descendants"
+             "description": "size to apply to descendants",
+             "items": {
+               "type": "number"
+             }
            }
         }
       }
