@@ -35,9 +35,19 @@
              }
            },
            "properties": {
-             "type": "array",
+             "type": "object",
              "title": "Properties",
-             "description": "string dictionary of HTML attributes to set on target div"
+             "description": "string dictionary of HTML attributes to set on target div",
+             "properties": {
+               "name": {
+                 "type": "string",
+                 "title": "Name"
+               },
+               "value": {
+                 "type": "string",
+                 "title": "Value"
+               }
+             }
            }
         }
       },
