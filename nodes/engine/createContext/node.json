@@ -15,6 +15,7 @@
         "type": "Node",
         "title": "El",
         "description": "will be top of Famo.us document element tree",
+        "required": false,
         "async": true
       }
     },

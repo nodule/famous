@@ -19,12 +19,20 @@
            "size": {
              "type": "array",
              "title": "Size",
-             "description": "[width, height] in pixels"
+             "description": "[width, height] in pixels",
+             "items": {
+               "type": "number"
+             },
+             "minItems": 2,
+             "maxItems": 2
            },
            "classes": {
              "type": "array",
              "title": "Classes",
-             "description": "CSS classes to set on inner content"
+             "description": "CSS classes to set on inner content",
+             "items": {
+               "type": "string"
+             }
            },
            "properties": {
              "type": "array",
