@@ -11,7 +11,8 @@
       "size": {
         "type": "any",
         "title": "Size",
-        "description": "provider object"
+        "description": "provider object",
+        "async": true
       },
       "modifier": {
         "type": "Modifier",

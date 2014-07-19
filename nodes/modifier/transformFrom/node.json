@@ -11,7 +11,8 @@
       "transform": {
         "type": "object",
         "title": "Transform",
-        "description": "transform provider object"
+        "description": "transform provider object",
+        "async": true
       },
       "modifier": {
         "type": "Modifier",

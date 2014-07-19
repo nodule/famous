@@ -11,7 +11,8 @@
       "origin": {
         "type": "any",
         "title": "Origin",
-        "description": "provider object"
+        "description": "provider object",
+        "async": true
       },
       "modifier": {
         "type": "Modifier",

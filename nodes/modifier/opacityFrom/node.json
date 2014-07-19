@@ -11,7 +11,8 @@
       "opacity": {
         "type": "any",
         "title": "Opacity",
-        "description": "provider object"
+        "description": "provider object",
+        "async": true
       },
       "modifier": {
         "type": "Modifier",

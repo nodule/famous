@@ -11,7 +11,8 @@
       "align": {
         "type": "any",
         "title": "Align",
-        "description": "provider object"
+        "description": "provider object",
+        "async": true
       },
       "modifier": {
         "type": "Modifier",
