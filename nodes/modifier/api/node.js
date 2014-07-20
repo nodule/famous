@@ -1,7 +1,7 @@
 output = function() {
 
   var opts =  {
-    origin: input.origin,
+    origin: input.origin
   };
 
   if(input.opacity) opts.opacity = size;
@@ -9,9 +9,9 @@ output = function() {
   if(input.transform) {
     opts.transform = input.transform;
   } else {
-    opts.transform: function() {
+    opts.transform = function() {
       cb( { animate: '' });
-    }
+    };
   }
   if(input.size) opts.size = size;
   if(input.opacity) opts.opacity = size;
