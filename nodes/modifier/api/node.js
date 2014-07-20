@@ -4,8 +4,6 @@ output = function() {
     origin: input.origin
   };
 
-  if(input.opacity) opts.opacity = size;
-
   if(input.transform) {
     opts.transform = input.transform;
   } else {
@@ -13,8 +11,8 @@ output = function() {
       cb( { animate: '' });
     };
   }
-  if(input.size) opts.size = size;
-  if(input.opacity) opts.opacity = size;
+  if(input.size) opts.size = input.size;
+  if(input.opacity) opts.opacity = input.opacity;
 
   cb( {
     modifier: new modifier(opts)
