@@ -2,6 +2,7 @@
   "name": "input",
   "ns": "surface",
   "title": "Input surface",
+  "async": true,
   "description": "A Famo.us surface in the form of an HTML input element.\n  This extends the Surface class.\n",
   "phrases": {
     "active": "Input surface"
