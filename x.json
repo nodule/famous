@@ -363,6 +363,7 @@
       },
       "description": "Creates a new Context for rendering and event handling with\n   provided document element as top of each tree. This will be tracked by the\n   process-wide Engine.\n",
       "title": "Create context",
+      "async": true,
       "ns": "engine",
       "name": "createContext",
       "fn": "on.input.el = function() {\n  output( { context: engine.createContext(data) });\n};\n"

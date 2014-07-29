@@ -1,6 +1,7 @@
 {
   "name": "createContext",
   "ns": "engine",
+  "async": true,
   "title": "Create context",
   "description": "Creates a new Context for rendering and event handling with\n   provided document element as top of each tree. This will be tracked by the\n   process-wide Engine.\n",
   "phrases": {
