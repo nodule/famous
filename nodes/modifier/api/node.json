@@ -13,12 +13,14 @@
     "input": {
        "opacity": {
          "type": "number",
-         "title": "Opacity"
+         "title": "Opacity",
+         "required": false
        },
        "Origin": {
          "type": "object",
          "title": "Origin",
-         "description": "origin adjustment"
+         "description": "origin adjustment",
+         "required": false
        },
        "Size": {
          "type": "array",
@@ -26,7 +28,8 @@
          "description": "size to apply to descendants",
          "items": {
            "type": "number"
-         }
+         },
+         "required": false
        },
         "transform": {
           "type": "object",
