@@ -2,6 +2,7 @@
   "name": "add",
   "ns": "context",
   "title": "Add",
+  "async": true,
   "description": "Add renderables to this Context's render tree.\n",
   "phrases": {
     "active": "Add"

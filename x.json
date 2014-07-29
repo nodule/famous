@@ -40,6 +40,7 @@
         "active": "Add"
       },
       "description": "Add renderables to this Context's render tree.\n",
+      "async": true,
       "title": "Add",
       "ns": "context",
       "name": "add",
