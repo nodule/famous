@@ -1276,27 +1276,32 @@
           "size": {
             "type": "array",
             "title": "Size",
-            "description": "[width, height] in pixels"
+            "description": "[width, height] in pixels",
+            "async": true
           },
           "classes": {
             "type": "array",
             "title": "Classes",
-            "description": "CSS classes to set on inner content"
+            "description": "CSS classes to set on inner content",
+            "async": true
           },
           "properties": {
             "type": "array",
             "title": "Properties",
-            "description": "string dictionary of HTML attributes to set on target div"
+            "description": "string dictionary of HTML attributes to set on target div",
+            "async": true
           },
           "content": {
             "type": "string",
             "title": "Content",
-            "description": "inner (HTML) content of surface"
+            "description": "inner (HTML) content of surface",
+            "async": true
           },
           "name": {
             "type": "string",
             "title": "Name",
-            "description": "specifies the name of textarea"
+            "description": "specifies the name of textarea",
+            "async": true
           },
           "placeholder": {
             "type": "string",
