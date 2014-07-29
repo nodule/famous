@@ -1268,72 +1268,65 @@
       "title": "Input surface",
       "ns": "surface",
       "name": "input",
-      "fn": "state = new input_surface();\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.properties = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
+      "fn": "state = new input_surface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.properties = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
     },
     {
       "ports": {
         "input": {
-          "options": {
-            "type": "object",
-            "title": "options",
-            "description": "default option overrides",
-            "properties": {
-              "size": {
-                "type": "array",
-                "title": "Size",
-                "description": "[width, height] in pixels"
-              },
-              "classes": {
-                "type": "array",
-                "title": "Classes",
-                "description": "CSS classes to set on inner content"
-              },
-              "properties": {
-                "type": "array",
-                "title": "Properties",
-                "description": "string dictionary of HTML attributes to set on target div"
-              },
-              "content": {
-                "type": "string",
-                "title": "Content",
-                "description": "inner (HTML) content of surface"
-              },
-              "name": {
-                "type": "string",
-                "title": "Name",
-                "description": "specifies the name of textarea"
-              }
-            },
-            "placeholder": {
-              "type": "string",
-              "title": "Placeholder",
-              "description": "placeholder text hint that describes the expected value of an textarea element",
-              "async": true
-            },
-            "value": {
-              "type": "string",
-              "title": "Value",
-              "description": "value of text",
-              "async": true
-            },
-            "wrap": {
-              "type": "string",
-              "title": "Wrap",
-              "description": "specify 'hard' or 'soft' wrap for textarea",
-              "async": true
-            },
-            "cols": {
-              "type": "number",
-              "title": "cols",
-              "description": "number of columns in textarea",
-              "async": true
-            },
-            "rows": {
-              "type": "number",
-              "title": "rows",
-              "description": "number of rows in textarea",
-              "async": true
-            }
+          "size": {
+            "type": "array",
+            "title": "Size",
+            "description": "[width, height] in pixels"
+          },
+          "classes": {
+            "type": "array",
+            "title": "Classes",
+            "description": "CSS classes to set on inner content"
+          },
+          "properties": {
+            "type": "array",
+            "title": "Properties",
+            "description": "string dictionary of HTML attributes to set on target div"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content",
+            "description": "inner (HTML) content of surface"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "specifies the name of textarea"
+          },
+          "placeholder": {
+            "type": "string",
+            "title": "Placeholder",
+            "description": "placeholder text hint that describes the expected value of an textarea element",
+            "async": true
+          },
+          "value": {
+            "type": "string",
+            "title": "Value",
+            "description": "value of text",
+            "async": true
+          },
+          "wrap": {
+            "type": "string",
+            "title": "Wrap",
+            "description": "specify 'hard' or 'soft' wrap for textarea",
+            "async": true
+          },
+          "cols": {
+            "type": "number",
+            "title": "cols",
+            "description": "number of columns in textarea",
+            "async": true
+          },
+          "rows": {
+            "type": "number",
+            "title": "rows",
+            "description": "number of rows in textarea",
+            "async": true
           }
         },
         "output": {
@@ -1353,7 +1346,7 @@
       "title": "Textarea surface",
       "ns": "surface",
       "name": "textarea",
-      "fn": "state = new input_surface(input.options);\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
+      "fn": "state = new textarea_surface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.properties = function() {\n  state.setProperties(data);\n};\n\non.input.content = function() {\n  state.setContent(data);\n};\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
     },
     {
       "ports": {
