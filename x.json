@@ -1177,57 +1177,53 @@
     {
       "ports": {
         "input": {
-          "options": {
+          "size": {
+            "type": "array",
+            "title": "Size",
+            "description": "[width, height] in pixels",
+            "async": true
+          },
+          "classes": {
+            "type": "array",
+            "title": "Classes",
+            "description": "CSS classes to set on inner content",
+            "async": true
+          },
+          "properties": {
             "type": "object",
-            "title": "options",
-            "description": "default option overrides",
-            "properties": {
-              "size": {
-                "type": "array",
-                "title": "Size",
-                "description": "[width, height] in pixels"
-              },
-              "classes": {
-                "type": "array",
-                "title": "Classes",
-                "description": "CSS classes to set on inner content"
-              },
-              "properties": {
-                "type": "array",
-                "title": "Properties",
-                "description": "string dictionary of HTML attributes to set on target div"
-              },
-              "name": {
-                "type": "string",
-                "title": "Name",
-                "description": "Set the name attribute of the element"
-              },
-              "type": {
-                "type": "string",
-                "title": "Type",
-                "description": "specifies the type of element to display",
-                "enum": [
-                  "button",
-                  "checkbox",
-                  "color",
-                  "date",
-                  "datetime",
-                  "datetime-local",
-                  "email",
-                  "search",
-                  "month",
-                  "number",
-                  "password",
-                  "radio",
-                  "range",
-                  "tel",
-                  "text",
-                  "time",
-                  "url",
-                  "week"
-                ]
-              }
-            }
+            "title": "Properties",
+            "description": "string dictionary of HTML attributes to set on target div",
+            "async": true
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Set the name attribute of the element"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "specifies the type of element to display",
+            "enum": [
+              "button",
+              "checkbox",
+              "color",
+              "date",
+              "datetime",
+              "datetime-local",
+              "email",
+              "search",
+              "month",
+              "number",
+              "password",
+              "radio",
+              "range",
+              "tel",
+              "text",
+              "time",
+              "url",
+              "week"
+            ]
           },
           "placeholder": {
             "type": "string",
@@ -1272,7 +1268,7 @@
       "title": "Input surface",
       "ns": "surface",
       "name": "input",
-      "fn": "state = new input_surface(input.options);\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
+      "fn": "state = new input_surface();\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.properties = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
     },
     {
       "ports": {

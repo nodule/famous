@@ -1,4 +1,24 @@
-state = new input_surface(input.options);
+state = new input_surface();
+
+on.input.name = function() {
+  state.setName(data);
+};
+
+on.input.size = function() {
+  state.setSize(data);
+};
+
+on.input.properties = function() {
+  state.setProperties (data);
+};
+
+on.input.classes = function() {
+  state.setClasses(data);
+};
+
+on.input.type = function() {
+  state.setType(data);
+};
 
 on.input.value = function() {
   state.setContent(data);

@@ -12,57 +12,53 @@
   },
   "ports": {
     "input": {
-      "options": {
+      "size": {
+        "type": "array",
+        "title": "Size",
+        "description": "[width, height] in pixels",
+        "async": true
+      },
+      "classes": {
+        "type": "array",
+        "title": "Classes",
+        "description": "CSS classes to set on inner content",
+        "async": true
+      },
+      "properties": {
         "type": "object",
-        "title": "options",
-        "description": "default option overrides",
-        "properties": {
-           "size": {
-             "type": "array",
-             "title": "Size",
-             "description": "[width, height] in pixels"
-           },
-           "classes": {
-             "type": "array",
-             "title": "Classes",
-             "description": "CSS classes to set on inner content"
-           },
-           "properties": {
-             "type": "array",
-             "title": "Properties",
-             "description": "string dictionary of HTML attributes to set on target div"
-           },
-           "name": {
-             "type": "string",
-             "title": "Name",
-             "description": "Set the name attribute of the element"
-           },
-           "type": {
-             "type": "string",
-             "title": "Type",
-             "description": "specifies the type of element to display",
-             "enum": [
-               "button",
-               "checkbox",
-               "color",
-               "date",
-               "datetime",
-               "datetime-local",
-               "email",
-               "search",
-               "month",
-               "number",
-               "password",
-               "radio",
-               "range",
-               "tel",
-               "text",
-               "time",
-               "url",
-               "week"
-             ]
-           }
-        }
+        "title": "Properties",
+        "description": "string dictionary of HTML attributes to set on target div",
+        "async": true
+      },
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "description": "Set the name attribute of the element"
+      },
+      "type": {
+        "type": "string",
+        "title": "Type",
+        "description": "specifies the type of element to display",
+        "enum": [
+          "button",
+          "checkbox",
+          "color",
+          "date",
+          "datetime",
+          "datetime-local",
+          "email",
+          "search",
+          "month",
+          "number",
+          "password",
+          "radio",
+          "range",
+          "tel",
+          "text",
+          "time",
+          "url",
+          "week"
+        ]
       },
       "placeholder": {
         "type": "string",
