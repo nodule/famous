@@ -1,4 +1,24 @@
-state = new input_surface(input.options);
+state = new textarea_surface({});
+
+on.input.size = function() {
+  state.setSize(data);
+};
+
+on.input.classes = function() {
+  state.setClasses(data);
+};
+
+on.input.properties = function() {
+  state.setProperties(data);
+};
+
+on.input.content = function() {
+  state.setContent(data);
+};
+
+on.input.name = function() {
+  state.setName(data);
+};
 
 on.input.value = function() {
   state.setValue(data);

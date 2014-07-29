@@ -1,4 +1,4 @@
-state = new input_surface();
+state = new input_surface({});
 
 on.input.name = function() {
   state.setName(data);
