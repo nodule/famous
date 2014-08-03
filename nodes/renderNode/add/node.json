@@ -1,0 +1,31 @@
+{
+  "name": "add",
+  "ns": "renderNode",
+  "title": "Add",
+  "async": true,
+  "description": "Append a renderable to the list of this node's children..\n",
+  "phrases": {
+    "active": "Add Rendernode"
+  },
+  "ports": {
+    "input": {
+      "obj": {
+        "type": "object",
+        "title": "Obj",
+        "description": "renderable object",
+        "async": true
+      },
+      "render_node": {
+        "type": "RenderNode",
+        "title": "Render Node"
+      }
+    },
+    "output": {
+      "child_node": {
+        "type": "RenderNode",
+        "title": "Render Node",
+        "description": "new render node wrapping child"
+      }
+    }
+  }
+}

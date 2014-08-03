@@ -974,6 +974,38 @@
     {
       "ports": {
         "input": {
+          "obj": {
+            "type": "object",
+            "title": "Obj",
+            "description": "renderable object",
+            "async": true
+          },
+          "render_node": {
+            "type": "RenderNode",
+            "title": "Render Node"
+          }
+        },
+        "output": {
+          "child_node": {
+            "type": "RenderNode",
+            "title": "Render Node",
+            "description": "new render node wrapping child"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Add Rendernode"
+      },
+      "description": "Append a renderable to the list of this node's children..\n",
+      "async": true,
+      "title": "Add",
+      "ns": "renderNode",
+      "name": "add",
+      "fn": "on.input.obj = function() {\n  output( { render_node: input.render_node.add(data) })\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
           "container": {
             "type": "ContainerSurface",
             "title": "Container Surface"
