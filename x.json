@@ -1001,7 +1001,7 @@
       "title": "Add",
       "ns": "renderNode",
       "name": "add",
-      "fn": "on.input.obj = function() {\n  output( { render_node: input.render_node.add(data) })\n};\n"
+      "fn": "on.input.obj = function() {\n  output( { child_node: input.render_node.add(data) })\n};\n"
     },
     {
       "ports": {
