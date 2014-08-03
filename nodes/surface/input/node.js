@@ -4,7 +4,7 @@ on.input.name = function() {
   state.setName(data);
 };
 
-on.input.size = function() {
+on.input.Size = function() {
   state.setSize(data);
 };
 
