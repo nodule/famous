@@ -1174,7 +1174,7 @@
       "title": "Image surface",
       "ns": "surface",
       "name": "image",
-      "fn": "state = new image_surface(input.options);\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n"
+      "fn": "state = new image_surface(input.options);\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput({ surface: state });\n"
     },
     {
       "ports": {
