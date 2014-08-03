@@ -1058,7 +1058,7 @@
       "title": "Canvas surface",
       "ns": "surface",
       "name": "canvas",
-      "fn": "state = new canvas_surface(input.options);\noutput({ surface: state });\n"
+      "fn": "state = new canvas_surface(input.options);\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1174,7 +1174,7 @@
       "title": "Image surface",
       "ns": "surface",
       "name": "image",
-      "fn": "state = new image_surface(input.options);\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput({ surface: state });\n"
+      "fn": "state = new image_surface(input.options);\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1270,7 +1270,7 @@
       "title": "Input surface",
       "ns": "surface",
       "name": "input",
-      "fn": "state = new input_surface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.properties = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
+      "fn": "state = new input_surface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.properties = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1353,7 +1353,7 @@
       "title": "Textarea surface",
       "ns": "surface",
       "name": "textarea",
-      "fn": "state = new textarea_surface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.properties = function() {\n  state.setProperties(data);\n};\n\non.input.content = function() {\n  state.setContent(data);\n};\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput( { surface: state } );\n"
+      "fn": "state = new textarea_surface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.properties = function() {\n  state.setProperties(data);\n};\n\non.input.content = function() {\n  state.setContent(data);\n};\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1414,7 +1414,7 @@
       "title": "Video surface",
       "ns": "surface",
       "name": "video",
-      "fn": "state = new video_surface(input.options);\n\non.input.video_url = function() {\n  state.setContent(data);\n};\n\noutput( { surface: state } );\n"
+      "fn": "state = new video_surface(input.options);\n\non.input.video_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {

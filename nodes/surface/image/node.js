@@ -4,4 +4,4 @@ on.input.image_url = function() {
   state.setContent(data);
 };
 
-output({ surface: state });
+output = { surface: state };

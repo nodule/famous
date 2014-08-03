@@ -36,4 +36,4 @@ on.input.blur = function() {
   state.blur();
 };
 
-output( { surface: state } );
+output = { surface: state };
