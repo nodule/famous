@@ -1205,7 +1205,7 @@
     {
       "ports": {
         "input": {
-          "Size": {
+          "size": {
             "type": "array",
             "title": "Size",
             "description": "[width, height] in pixels",
