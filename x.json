@@ -1151,8 +1151,7 @@
             },
             "minItems": 2,
             "maxItems": 2,
-            "async": true,
-            "required": false
+            "async": true
           },
           "classes": {
             "type": "array",
@@ -1161,8 +1160,7 @@
             "items": {
               "type": "string"
             },
-            "async": true,
-            "required": false
+            "async": true
           },
           "attr": {
             "type": "object",
@@ -1178,8 +1176,7 @@
                 "title": "Value"
               }
             },
-            "async": true,
-            "required": false
+            "async": true
           },
           "image_url": {
             "type": "string",
@@ -1201,6 +1198,7 @@
         "active": "Image surface"
       },
       "description": "A surface containing image content.\n  This extends the Surface class.\n",
+      "async": true,
       "title": "Image surface",
       "ns": "surface",
       "name": "image",
