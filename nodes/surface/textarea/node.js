@@ -48,4 +48,6 @@ on.input.blur = function() {
   state.blur();
 };
 
-output = { surface: state };
+on.start = function() {
+  output( { surface: state } );
+};
