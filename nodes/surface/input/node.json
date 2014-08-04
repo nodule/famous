@@ -24,7 +24,7 @@
         "description": "CSS classes to set on inner content",
         "async": true
       },
-      "properties": {
+      "attributes": {
         "type": "object",
         "title": "Properties",
         "description": "string dictionary of HTML attributes to set on target div",
@@ -33,7 +33,8 @@
       "name": {
         "type": "string",
         "title": "Name",
-        "description": "Set the name attribute of the element"
+        "description": "Set the name attribute of the element",
+        "async": true
       },
       "type": {
         "type": "string",
@@ -58,7 +59,8 @@
           "time",
           "url",
           "week"
-        ]
+        ],
+        "async": true
       },
       "placeholder": {
         "type": "string",

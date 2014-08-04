@@ -8,7 +8,7 @@ on.input.classes = function() {
   state.setClasses(data);
 };
 
-on.input.properties = function() {
+on.input.attributes = function() {
   state.setProperties(data);
 };
 

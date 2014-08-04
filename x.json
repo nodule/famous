@@ -1028,6 +1028,7 @@
       },
       "description": "Add renderables to this object's render tree",
       "title": "Add Renderable to a Container surface",
+      "async": true,
       "ns": "surface",
       "name": "add",
       "fn": "state = input.container;\n\non.input.renderable = function() {\n  output({ render_node: state.add(data) });\n};\n"
@@ -1095,27 +1096,23 @@
     {
       "ports": {
         "input": {
-          "options": {
-            "type": "object",
-            "title": "options",
-            "description": "default option overrides",
-            "properties": {
-              "size": {
-                "type": "array",
-                "title": "Size",
-                "description": "[width, height] in pixels"
-              },
-              "classes": {
-                "type": "array",
-                "title": "Classes",
-                "description": "CSS classes to set on inner content"
-              },
-              "properties": {
-                "type": "array",
-                "title": "Properties",
-                "description": "string dictionary of HTML attributes to set on target div"
-              }
-            }
+          "size": {
+            "type": "array",
+            "title": "Size",
+            "description": "[width, height] in pixels",
+            "async": true
+          },
+          "classes": {
+            "type": "array",
+            "title": "Classes",
+            "description": "CSS classes to set on inner content",
+            "async": true
+          },
+          "attributes": {
+            "type": "array",
+            "title": "Properties",
+            "description": "string dictionary of HTML attributes to set on target div",
+            "async": true
           }
         },
         "output": {
@@ -1133,9 +1130,10 @@
       },
       "description": "ContainerSurface is an object designed to contain surfaces and\n  set properties to be applied to all of them at once.\n  This extends the Surface class.\n  A container surface will enforce these properties on the\n  surfaces it contains:\n\n  size (clips contained surfaces to its own width and height);\n\n  origin;\n\n  its own opacity and transform, which will be automatically\n  applied to  all Surfaces contained directly and indirectly.\n",
       "title": "Container surface",
+      "async": true,
       "ns": "surface",
       "name": "container",
-      "fn": "output = function() {\n  cb( { surface: new container_surface(input.options) } );\n  done();\n};\n"
+      "fn": "state = new container_surface(input.options);\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1149,6 +1147,7 @@
             },
             "minItems": 2,
             "maxItems": 2,
+            "async": true,
             "required": false
           },
           "classes": {
@@ -1158,6 +1157,7 @@
             "items": {
               "type": "string"
             },
+            "async": true,
             "required": false
           },
           "attributes": {
@@ -1174,6 +1174,7 @@
                 "title": "Value"
               }
             },
+            "async": true,
             "required": false
           },
           "image_url": {
@@ -1216,7 +1217,7 @@
             "description": "CSS classes to set on inner content",
             "async": true
           },
-          "properties": {
+          "attributes": {
             "type": "object",
             "title": "Properties",
             "description": "string dictionary of HTML attributes to set on target div",
@@ -1225,7 +1226,8 @@
           "name": {
             "type": "string",
             "title": "Name",
-            "description": "Set the name attribute of the element"
+            "description": "Set the name attribute of the element",
+            "async": true
           },
           "type": {
             "type": "string",
@@ -1250,7 +1252,8 @@
               "time",
               "url",
               "week"
-            ]
+            ],
+            "async": true
           },
           "placeholder": {
             "type": "string",
@@ -1295,7 +1298,7 @@
       "title": "Input surface",
       "ns": "surface",
       "name": "input",
-      "fn": "state = new input_surface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.Size = function() {\n  state.setSize(data);\n};\n\non.input.properties = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput = { surface: state };\n"
+      "fn": "state = new input_surface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.attributes = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1312,7 +1315,7 @@
             "description": "CSS classes to set on inner content",
             "async": true
           },
-          "properties": {
+          "attributes": {
             "type": "array",
             "title": "Properties",
             "description": "string dictionary of HTML attributes to set on target div",
@@ -1378,42 +1381,40 @@
       "title": "Textarea surface",
       "ns": "surface",
       "name": "textarea",
-      "fn": "state = new textarea_surface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.properties = function() {\n  state.setProperties(data);\n};\n\non.input.content = function() {\n  state.setContent(data);\n};\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput = { surface: state };\n"
+      "fn": "state = new textarea_surface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.content = function() {\n  state.setContent(data);\n};\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
         "input": {
-          "options": {
-            "type": "object",
-            "title": "options",
-            "description": "default option overrides",
-            "properties": {
-              "size": {
-                "type": "array",
-                "title": "Size",
-                "description": "[width, height] in pixels"
-              },
-              "classes": {
-                "type": "array",
-                "title": "Classes",
-                "description": "CSS classes to set on inner content"
-              },
-              "properties": {
-                "type": "array",
-                "title": "Properties",
-                "description": "string dictionary of HTML attributes to set on target div"
-              },
-              "content": {
-                "type": "string",
-                "title": "Content",
-                "description": "inner (HTML) content of surface"
-              },
-              "autoplay": {
-                "type": "boolean",
-                "title": "autoplay",
-                "description": "HTML autoplay"
-              }
-            }
+          "size": {
+            "type": "array",
+            "title": "Size",
+            "description": "[width, height] in pixels",
+            "async": true
+          },
+          "classes": {
+            "type": "array",
+            "title": "Classes",
+            "description": "CSS classes to set on inner content",
+            "async": true
+          },
+          "attributes": {
+            "type": "array",
+            "title": "Properties",
+            "description": "string dictionary of HTML attributes to set on target div",
+            "async": true
+          },
+          "content": {
+            "type": "string",
+            "title": "Content",
+            "description": "inner (HTML) content of surface",
+            "async": true
+          },
+          "autoplay": {
+            "type": "boolean",
+            "title": "autoplay",
+            "description": "HTML autoplay",
+            "async": true
           },
           "video_url": {
             "type": "string",
@@ -1439,7 +1440,7 @@
       "title": "Video surface",
       "ns": "surface",
       "name": "video",
-      "fn": "state = new video_surface(input.options);\n\non.input.video_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
+      "fn": "state = new video_surface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setAttributes(data);\n};\n\non.input.autoplay = function() {\n  state.setAutoplay(data);\n};\n\non.input.video_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {

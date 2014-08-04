@@ -4,11 +4,11 @@ on.input.name = function() {
   state.setName(data);
 };
 
-on.input.Size = function() {
+on.input.size = function() {
   state.setSize(data);
 };
 
-on.input.properties = function() {
+on.input.attributes = function() {
   state.setProperties (data);
 };
 

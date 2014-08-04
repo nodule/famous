@@ -1,6 +1,7 @@
 {
   "name": "add",
   "ns": "surface",
+  "async": true,
   "title": "Add Renderable to a Container surface",
   "description": "Add renderables to this object's render tree",
   "phrases": {

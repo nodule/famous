@@ -11,37 +11,35 @@
   },
   "ports": {
     "input": {
-      "options": {
-        "type": "object",
-        "title": "options",
-        "description": "default option overrides",
-        "properties": {
-           "size": {
-             "type": "array",
-             "title": "Size",
-             "description": "[width, height] in pixels"
-           },
-           "classes": {
-             "type": "array",
-             "title": "Classes",
-             "description": "CSS classes to set on inner content"
-           },
-           "properties": {
-             "type": "array",
-             "title": "Properties",
-             "description": "string dictionary of HTML attributes to set on target div"
-           },
-           "content": {
-             "type": "string",
-             "title": "Content",
-             "description": "inner (HTML) content of surface"
-           },
-          "autoplay": {
-            "type": "boolean",
-            "title": "autoplay",
-            "description": "HTML autoplay"
-          }
-        }
+       "size": {
+         "type": "array",
+         "title": "Size",
+         "description": "[width, height] in pixels",
+         "async": true
+       },
+       "classes": {
+         "type": "array",
+         "title": "Classes",
+         "description": "CSS classes to set on inner content",
+         "async": true
+       },
+       "attributes": {
+         "type": "array",
+         "title": "Properties",
+         "description": "string dictionary of HTML attributes to set on target div",
+         "async": true
+       },
+       "content": {
+         "type": "string",
+         "title": "Content",
+         "description": "inner (HTML) content of surface",
+         "async": true
+       },
+      "autoplay": {
+        "type": "boolean",
+        "title": "autoplay",
+        "description": "HTML autoplay",
+        "async": true
       },
       "video_url": {
         "type": "string",

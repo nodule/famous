@@ -23,7 +23,7 @@
         "description": "CSS classes to set on inner content",
         "async": true
       },
-      "properties": {
+      "attributes": {
         "type": "array",
         "title": "Properties",
         "description": "string dictionary of HTML attributes to set on target div",
