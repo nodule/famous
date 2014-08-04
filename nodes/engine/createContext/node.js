@@ -5,3 +5,5 @@ state = engine.createContext();
 on.input.el = function() {
   state.migrate(data);
 };
+
+output = { context: state };
