@@ -770,13 +770,13 @@
             "title": "Opacity",
             "required": false
           },
-          "Origin": {
+          "origin": {
             "type": "object",
             "title": "Origin",
             "description": "origin adjustment",
             "required": false
           },
-          "Size": {
+          "size": {
             "type": "array",
             "title": "Size",
             "description": "size to apply to descendants",
