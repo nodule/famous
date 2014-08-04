@@ -1,4 +1,4 @@
-state = new container_surface(input.options);
+state = new container_surface({});
 
 on.input.classes = function() {
   state.setClasses(data);

@@ -1109,7 +1109,7 @@
             "async": true
           },
           "attributes": {
-            "type": "array",
+            "type": "object",
             "title": "Properties",
             "description": "string dictionary of HTML attributes to set on target div",
             "async": true
@@ -1133,7 +1133,7 @@
       "async": true,
       "ns": "surface",
       "name": "container",
-      "fn": "state = new container_surface(input.options);\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\n\noutput = { surface: state };\n"
+      "fn": "state = new container_surface({});\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
