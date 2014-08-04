@@ -1,3 +1,3 @@
 on.input.key = function() {
-  output( { object: engine.getOptions(data) });
+  output( { object: famous.core.Engine.getOptions(data) });
 };

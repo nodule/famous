@@ -1,3 +1,3 @@
 on.input.fn = function() {
-  engine.nextTick(data);
+  famous.core.Engine.nextTick(data);
 };

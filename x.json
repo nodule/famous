@@ -356,7 +356,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Create context"
@@ -366,7 +366,7 @@
       "async": true,
       "ns": "engine",
       "name": "createContext",
-      "fn": "on.start = function() {\n  state = engine.createContext();\n  output( { context: state });\n};\n\non.input.el = function() {\n  state.migrate(data);\n};\n"
+      "fn": "on.start = function() {\n  state = famous.core.Engine.createContext();\n  output( { context: state });\n};\n\non.input.el = function() {\n  state.migrate(data);\n};\n"
     },
     {
       "ports": {
@@ -380,7 +380,7 @@
         "output": {}
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Defer"
@@ -389,7 +389,7 @@
       "title": "Defer",
       "ns": "engine",
       "name": "defer",
-      "fn": "on.input.fn = function() {\n  engine.defer(data);\n};\n"
+      "fn": "on.input.fn = function() {\n  famous.core.Engine.defer(data);\n};\n"
     },
     {
       "ports": {
@@ -413,7 +413,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Emit"
@@ -422,7 +422,7 @@
       "title": "Emit",
       "ns": "engine",
       "name": "emit",
-      "fn": "output = function() {\n  cb( { event_handler: engine.emit(input.type, input.event) });\n  done();\n};\n"
+      "fn": "output = function() {\n  cb( { event_handler: famous.core.Engine.emit(input.type, input.event) });\n  done();\n};\n"
     },
     {
       "ports": {
@@ -436,7 +436,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Get fps"
@@ -445,7 +445,7 @@
       "title": "Get fps",
       "ns": "engine",
       "name": "getFPS",
-      "fn": "output = function() {\n  cb( { event_handler: engine.emit(input.type, input.event) });\n  done();\n};\n"
+      "fn": "output = function() {\n  cb( { event_handler: famous.core.Engine.emit(input.type, input.event) });\n  done();\n};\n"
     },
     {
       "ports": {
@@ -466,7 +466,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Get options"
@@ -475,7 +475,7 @@
       "title": "Get options",
       "ns": "engine",
       "name": "getOptions",
-      "fn": "on.input.key = function() {\n  output( { object: engine.getOptions(data) });\n};\n"
+      "fn": "on.input.key = function() {\n  output( { object: famous.core.Engine.getOptions(data) });\n};\n"
     },
     {
       "ports": {
@@ -489,7 +489,7 @@
         "output": {}
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Next tick"
@@ -498,7 +498,7 @@
       "title": "Next tick",
       "ns": "engine",
       "name": "nextTick",
-      "fn": "on.input.fn = function() {\n  engine.nextTick(data);\n};\n"
+      "fn": "on.input.fn = function() {\n  famous.core.Engine.nextTick(data);\n};\n"
     },
     {
       "ports": {
@@ -526,7 +526,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "On"
@@ -535,7 +535,7 @@
       "title": "On",
       "ns": "engine",
       "name": "on",
-      "fn": "output = function() {\n\n  cb( {\n    event_handler: engine.on(input.type, input.handler)\n  });\n  done();\n\n};\n"
+      "fn": "output = function() {\n\n  cb( {\n    event_handler: famous.core.Engine.on(input.type, input.handler)\n  });\n  done();\n\n};\n"
     },
     {
       "ports": {
@@ -556,7 +556,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Pipe"
@@ -565,7 +565,7 @@
       "title": "Pipe",
       "ns": "engine",
       "name": "pipe",
-      "fn": "on.input.target = function() {\n  output( { event_handler: engine.pipe(data) });\n};\n"
+      "fn": "on.input.target = function() {\n  output( { event_handler: famous.core.Engine.pipe(data) });\n};\n"
     },
     {
       "ports": {
@@ -586,7 +586,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Register context"
@@ -595,7 +595,7 @@
       "title": "Register context",
       "ns": "engine",
       "name": "registerContext",
-      "fn": "on.input.context = function() {\n  output( { famous_context: engine.registerContext(data) });\n};\n"
+      "fn": "on.input.context = function() {\n  output( { famous_context: famous.core.Engine.registerContext(data) });\n};\n"
     },
     {
       "ports": {
@@ -620,7 +620,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Remove listener"
@@ -629,7 +629,7 @@
       "title": "Remove listener",
       "ns": "engine",
       "name": "removeListener",
-      "fn": "output = function() {\n  cb( { event_handler: engine.removeListener(input.type, input.handler) })\n  done();\n};\n"
+      "fn": "output = function() {\n  cb( { event_handler: famous.core.Engine.removeListener(input.type, input.handler) })\n  done();\n};\n"
     },
     {
       "ports": {
@@ -643,7 +643,7 @@
         "output": {}
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Set fpscap"
@@ -652,7 +652,7 @@
       "title": "Set fpscap",
       "ns": "engine",
       "name": "setFPSCap",
-      "fn": "on.input.fps = function() {\n  engine.setFPSCap(data);\n};\n"
+      "fn": "on.input.fps = function() {\n  famous.core.Engine.setFPSCap(data);\n};\n"
     },
     {
       "ports": {
@@ -691,7 +691,7 @@
         "output": {}
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Set options"
@@ -700,7 +700,7 @@
       "title": "Set options",
       "ns": "engine",
       "name": "setOptions",
-      "fn": "on.input.options = function() {\n  engine.setOptions(data);\n};\n"
+      "fn": "on.input.options = function() {\n  famous.core.Engine.setOptions(data);\n};\n"
     },
     {
       "ports": {
@@ -721,7 +721,7 @@
         }
       },
       "require": {
-        "famo.us/core/Engine": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Unpipe"
@@ -730,7 +730,7 @@
       "title": "Unpipe",
       "ns": "engine",
       "name": "unpipe",
-      "fn": "on.input.target = function() {\n  output( { event_handler: engine.unpipe(data) });\n};\n"
+      "fn": "on.input.target = function() {\n  output( { event_handler: famous.core.Engine.unpipe(data) });\n};\n"
     },
     {
       "ports": {
@@ -809,7 +809,7 @@
         }
       },
       "require": {
-        "famo.us/core/Modifier": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Modifier"
@@ -818,7 +818,7 @@
       "title": "Modifier",
       "ns": "modifier",
       "name": "api",
-      "fn": "output = function() {\n\n  var opts =  {\n    origin: input.origin\n  };\n\n  if(input.transform) {\n    opts.transform = input.transform;\n  } else {\n    opts.transform = function() {\n      cb( { animate: '' });\n    };\n  }\n  if(input.size) opts.size = input.size;\n  if(input.opacity) opts.opacity = input.opacity;\n\n  cb( {\n    modifier: new modifier(opts)\n  });\n\n  done();\n};\n"
+      "fn": "output = function() {\n\n  var opts =  {\n    origin: input.origin\n  };\n\n  if(input.transform) {\n    opts.transform = input.transform;\n  } else {\n    opts.transform = function() {\n      cb( { animate: '' });\n    };\n  }\n  if(input.size) opts.size = input.size;\n  if(input.opacity) opts.opacity = input.opacity;\n\n  cb( {\n    modifier: new famous.core.Modifier(opts)\n  });\n\n  done();\n};\n"
     },
     {
       "ports": {

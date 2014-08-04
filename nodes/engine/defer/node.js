@@ -1,3 +1,3 @@
 on.input.fn = function() {
-  engine.defer(data);
+  famous.core.Engine.defer(data);
 };

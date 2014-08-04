@@ -1,5 +1,5 @@
 on.start = function() {
-  state = engine.createContext();
+  state = famous.core.Engine.createContext();
   output( { context: state });
 };
 

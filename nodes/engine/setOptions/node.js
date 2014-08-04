@@ -1,3 +1,3 @@
 on.input.options = function() {
-  engine.setOptions(data);
+  famous.core.Engine.setOptions(data);
 };

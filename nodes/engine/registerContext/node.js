@@ -1,3 +1,3 @@
 on.input.context = function() {
-  output( { famous_context: engine.registerContext(data) });
+  output( { famous_context: famous.core.Engine.registerContext(data) });
 };

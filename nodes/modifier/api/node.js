@@ -15,7 +15,7 @@ output = function() {
   if(input.opacity) opts.opacity = input.opacity;
 
   cb( {
-    modifier: new modifier(opts)
+    modifier: new famous.core.Modifier(opts)
   });
 
   done();

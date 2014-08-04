@@ -1,3 +1,3 @@
 on.input.fps = function() {
-  engine.setFPSCap(data);
+  famous.core.Engine.setFPSCap(data);
 };

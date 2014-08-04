@@ -7,7 +7,7 @@
     "active": "On"
   },
   "require": {
-    "famo.us/core/Engine": "0.x.x"
+    "famous": "0.x.x"
   },
   "ports": {
     "input": {
