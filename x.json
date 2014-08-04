@@ -771,9 +771,13 @@
             "required": false
           },
           "origin": {
-            "type": "object",
+            "type": "array",
             "title": "Origin",
             "description": "origin adjustment",
+            "items": {
+              "type": "number"
+            },
+            "default": [],
             "required": false
           },
           "size": {
