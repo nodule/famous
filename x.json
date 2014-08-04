@@ -1140,48 +1140,41 @@
     {
       "ports": {
         "input": {
-          "options": {
+          "size": {
+            "type": "array",
+            "title": "Size",
+            "description": "[width, height] in pixels",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "required": false
+          },
+          "classes": {
+            "type": "array",
+            "title": "Classes",
+            "description": "CSS classes to set on inner content",
+            "items": {
+              "type": "string"
+            },
+            "required": false
+          },
+          "properties": {
             "type": "object",
-            "title": "options",
-            "description": "default option overrides",
+            "title": "Properties",
+            "description": "string dictionary of HTML attributes to set on target div",
             "properties": {
-              "size": {
-                "type": "array",
-                "title": "Size",
-                "description": "[width, height] in pixels",
-                "items": {
-                  "type": "number"
-                },
-                "minItems": 2,
-                "maxItems": 2,
-                "required": false
+              "name": {
+                "type": "string",
+                "title": "Name"
               },
-              "classes": {
-                "type": "array",
-                "title": "Classes",
-                "description": "CSS classes to set on inner content",
-                "items": {
-                  "type": "string"
-                },
-                "required": false
-              },
-              "properties": {
-                "type": "object",
-                "title": "Properties",
-                "description": "string dictionary of HTML attributes to set on target div",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "title": "Name"
-                  },
-                  "value": {
-                    "type": "string",
-                    "title": "Value"
-                  }
-                },
-                "required": false
+              "value": {
+                "type": "string",
+                "title": "Value"
               }
-            }
+            },
+            "required": false
           },
           "image_url": {
             "type": "string",
@@ -1206,7 +1199,7 @@
       "title": "Image surface",
       "ns": "surface",
       "name": "image",
-      "fn": "state = new image_surface(input.options);\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
+      "fn": "state = new image_surface({});\n\non.input.properties = function() {\n  state.setProperties(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
