@@ -33,7 +33,7 @@
         "async": true,
         "required": false
       },
-      "attributes": {
+      "attr": {
         "type": "object",
         "title": "Properties",
         "description": "string dictionary of HTML attributes to set on target div",

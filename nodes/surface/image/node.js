@@ -1,6 +1,6 @@
 state = new image_surface({});
 
-on.input.attributes = function() {
+on.input.attr = function() {
   state.setProperties(data);
 };
 

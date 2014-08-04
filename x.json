@@ -1160,7 +1160,7 @@
             "async": true,
             "required": false
           },
-          "attributes": {
+          "attr": {
             "type": "object",
             "title": "Properties",
             "description": "string dictionary of HTML attributes to set on target div",
@@ -1200,7 +1200,7 @@
       "title": "Image surface",
       "ns": "surface",
       "name": "image",
-      "fn": "state = new image_surface({});\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
+      "fn": "state = new image_surface({});\n\non.input.attr = function() {\n  state.setProperties(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
