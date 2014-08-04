@@ -7,7 +7,7 @@
     "active": "Textarea surface"
   },
   "require": {
-    "famo.us/surfaces/TextareaSurface": "0.x.x"
+    "famous": "0.x.x"
   },
   "ports": {
     "input": {

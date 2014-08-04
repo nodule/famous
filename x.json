@@ -1086,7 +1086,7 @@
         }
       },
       "require": {
-        "famo.us/surfaces/CanvasSurface": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Canvas surface"
@@ -1095,7 +1095,7 @@
       "title": "Canvas surface",
       "ns": "surface",
       "name": "canvas",
-      "fn": "state = new canvas_surface(input.options);\noutput = { surface: state };\n"
+      "fn": "state = new famous.surfaces.CanvasSurface(input.options);\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1127,7 +1127,7 @@
         }
       },
       "require": {
-        "famo.us/surfaces/ContainerSurface": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Container surface"
@@ -1137,7 +1137,7 @@
       "async": true,
       "ns": "surface",
       "name": "container",
-      "fn": "state = new container_surface({});\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\n\noutput = { surface: state };\n"
+      "fn": "state = new famous.surfaces.ContainerSurface({});\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1195,7 +1195,7 @@
         }
       },
       "require": {
-        "famo.us/surfaces/ImageSurface": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Image surface"
@@ -1204,7 +1204,7 @@
       "title": "Image surface",
       "ns": "surface",
       "name": "image",
-      "fn": "/**\n *\n * Ok, for this to work all nodes must be started.\n * And they *must* be started in order of wireing.\n *\n * Which would then be the setup/start phase.\n *\n * Naturally you'll have to add the Engine node somewhere.\n * And wire things together, however the engine internaly\n *\n * expects to be the first to startup\n *\n * This can be solved by giving each node the change to do\n * something during startup, hence on.start()\n *\n * The problem is, I start the engine through an async port.\n * Which is much later then this ImageSurface creation was.\n *\n * Another option is to just make sure the engine also\n * initializes it's engine earlier.\n *\n * Which could fail if this node still is created first.\n * Which it probably isn't by luck\n *\n */\nstate = new image_surface({});\non.start = function() {\n  output( { surface: state } );\n};\non.input.attr = function() {\n  state.setProperties(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
+      "fn": "/**\n *\n * Ok, for this to work all nodes must be started.\n * And they *must* be started in order of wireing.\n *\n * Which would then be the setup/start phase.\n *\n * Naturally you'll have to add the Engine node somewhere.\n * And wire things together, however the engine internaly\n *\n * expects to be the first to startup\n *\n * This can be solved by giving each node the change to do\n * something during startup, hence on.start()\n *\n * The problem is, I start the engine through an async port.\n * Which is much later then this ImageSurface creation was.\n *\n * Another option is to just make sure the engine also\n * initializes it's engine earlier.\n *\n * Which could fail if this node still is created first.\n * Which it probably isn't by luck\n *\n */\nstate = new famous.surfaces.ImageSurface({});\non.start = function() {\n  output( { surface: state } );\n};\non.input.attr = function() {\n  state.setProperties(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1298,7 +1298,7 @@
         }
       },
       "require": {
-        "famo.us/surfaces/InputSurface": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Input surface"
@@ -1308,7 +1308,7 @@
       "title": "Input surface",
       "ns": "surface",
       "name": "input",
-      "fn": "state = new input_surface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.attributes = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\non.start = function() {\n  output({ surface: state });\n};\n"
+      "fn": "state = new famous.surfaces.InputSurface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.attributes = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\non.start = function() {\n  output({ surface: state });\n};\n"
     },
     {
       "ports": {
@@ -1382,7 +1382,7 @@
         }
       },
       "require": {
-        "famo.us/surfaces/TextareaSurface": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Textarea surface"
@@ -1391,7 +1391,7 @@
       "title": "Textarea surface",
       "ns": "surface",
       "name": "textarea",
-      "fn": "state = new textarea_surface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.content = function() {\n  state.setContent(data);\n};\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput = { surface: state };\n"
+      "fn": "state = new famous.surfaces.TextareaSurface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.content = function() {\n  state.setContent(data);\n};\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.wrap = function() {\n  state.setWrap(data);\n};\n\non.input.cols = function() {\n  state.setCols(data);\n};\n\non.input.rows = function() {\n  state.setRows(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
@@ -1441,7 +1441,7 @@
         }
       },
       "require": {
-        "famo.us/surfaces/VideoSurface": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Video surface"
@@ -1450,7 +1450,7 @@
       "title": "Video surface",
       "ns": "surface",
       "name": "video",
-      "fn": "state = new video_surface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setAttributes(data);\n};\n\non.input.autoplay = function() {\n  state.setAutoplay(data);\n};\n\non.input.video_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
+      "fn": "state = new famous.surfaces.VideoSurface({});\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setAttributes(data);\n};\n\non.input.autoplay = function() {\n  state.setAutoplay(data);\n};\n\non.input.video_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {

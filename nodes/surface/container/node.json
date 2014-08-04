@@ -8,7 +8,7 @@
     "active": "Container surface"
   },
   "require": {
-    "famo.us/surfaces/ContainerSurface": "0.x.x"
+    "famous": "0.x.x"
   },
   "ports": {
     "input": {

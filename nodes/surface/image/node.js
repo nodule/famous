@@ -23,7 +23,7 @@
  * Which it probably isn't by luck
  *
  */
-state = new image_surface({});
+state = new famous.surfaces.ImageSurface({});
 on.start = function() {
   output( { surface: state } );
 };

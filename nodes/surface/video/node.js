@@ -1,4 +1,4 @@
-state = new video_surface({});
+state = new famous.surfaces.VideoSurface({});
 
 on.input.size = function() {
   state.setSize(data);

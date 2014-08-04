@@ -7,7 +7,7 @@
     "active": "Video surface"
   },
   "require": {
-    "famo.us/surfaces/VideoSurface": "0.x.x"
+    "famous": "0.x.x"
   },
   "ports": {
     "input": {

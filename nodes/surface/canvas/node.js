@@ -1,2 +1,2 @@
-state = new canvas_surface(input.options);
+state = new famous.surfaces.CanvasSurface(input.options);
 output = { surface: state };

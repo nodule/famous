@@ -1,4 +1,4 @@
-state = new container_surface({});
+state = new famous.surfaces.ContainerSurface({});
 
 on.input.classes = function() {
   state.setClasses(data);

@@ -1,4 +1,4 @@
-state = new textarea_surface({});
+state = new famous.surfaces.TextareaSurface({});
 
 on.input.size = function() {
   state.setSize(data);
