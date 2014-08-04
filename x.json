@@ -1209,7 +1209,13 @@
             "type": "array",
             "title": "Size",
             "description": "[width, height] in pixels",
-            "async": true
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "async": true,
+            "required": false
           },
           "classes": {
             "type": "array",
