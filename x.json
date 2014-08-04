@@ -366,7 +366,7 @@
       "async": true,
       "ns": "engine",
       "name": "createContext",
-      "fn": "on.input.el = function() {\n  output( { context: engine.createContext(data) });\n};\n"
+      "fn": "// must be called outside, to have any change.\n// will still be buggy though\nstate = engine.createContext(data);\n\non.input.el = function() {\n  output( { context: state });\n};\n"
     },
     {
       "ports": {
@@ -1200,7 +1200,7 @@
       "title": "Image surface",
       "ns": "surface",
       "name": "image",
-      "fn": "state = new image_surface({});\n\non.input.attr = function() {\n  state.setProperties(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
+      "fn": "/**\n *\n * Ok, for this to work all nodes must be started.\n * And they *must* be started in order of wireing.\n *\n * Which would then be the setup/start phase.\n *\n * Naturally you'll have to add the Engine node somewhere.\n * And wire things together, however the engine internaly\n *\n * expects to be the first to startup\n *\n * This can be solved by giving each node the change to do\n * something during startup, hence on.start()\n *\n * The problem is, I start the engine through an async port.\n * Which is much later then this ImageSurface creation was.\n *\n * Another option is to just make sure the engine also\n * initializes it's engine earlier.\n *\n * Which could fail if this node still is created first.\n * Which it probably isn't by luck\n *\n */\nstate = new image_surface({});\non.start = function() {\n  output( { surface: state } );\n};\non.input.attr = function() {\n  state.setProperties(data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.image_url = function() {\n  state.setContent(data);\n};\n\noutput = { surface: state };\n"
     },
     {
       "ports": {
