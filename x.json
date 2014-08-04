@@ -366,7 +366,7 @@
       "async": true,
       "ns": "engine",
       "name": "createContext",
-      "fn": "// must be called outside, to have any change.\n// will still be buggy though\nstate = engine.createContext(data);\n\non.input.el = function() {\n  output( { context: state });\n};\n"
+      "fn": "// must be called outside, to have any change.\n// will still be buggy though\nstate = engine.createContext();\n\non.input.el = function() {\n  state.migrate(data);\n};\n"
     },
     {
       "ports": {

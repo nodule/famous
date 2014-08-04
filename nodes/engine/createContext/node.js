@@ -1,7 +1,7 @@
 // must be called outside, to have any change.
 // will still be buggy though
-state = engine.createContext(data);
+state = engine.createContext();
 
 on.input.el = function() {
-  output( { context: state });
+  state.migrate(data);
 };
