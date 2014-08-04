@@ -1386,6 +1386,7 @@
         "active": "Textarea surface"
       },
       "description": "A Famo.us surface in the form of an HTML textarea element.\n  This extends the Surface class.\n",
+      "async": true,
       "title": "Textarea surface",
       "ns": "surface",
       "name": "textarea",
