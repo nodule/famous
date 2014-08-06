@@ -1,6 +1,6 @@
 output = function() {
   cb( {
-    transform: transform.rotate(phi, theta, psi)
+    transform: transform.rotate(input.phi, input.theta, input.psi)
   });
   done();
 };
