@@ -1306,7 +1306,7 @@
       "title": "Input surface",
       "ns": "surface",
       "name": "input",
-      "fn": "state = new famous.surfaces.InputSurface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.attributes = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setContent(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\non.start = function() {\n  output({ surface: state });\n};\n"
+      "fn": "state = new famous.surfaces.InputSurface({});\n\non.input.name = function() {\n  state.setName(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.attributes = function() {\n  state.setProperties (data);\n};\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.type = function() {\n  state.setType(data);\n};\n\non.input.value = function() {\n  state.setValue(data);\n};\n\non.input.placeholder = function() {\n  state.setPlaceholder(data);\n};\n\non.input.focus = function() {\n  state.focus();\n};\n\non.input.blur = function() {\n  state.blur();\n};\n\non.start = function() {\n  output({ surface: state });\n};\n"
     },
     {
       "ports": {

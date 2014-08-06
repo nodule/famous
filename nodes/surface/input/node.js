@@ -21,7 +21,7 @@ on.input.type = function() {
 };
 
 on.input.value = function() {
-  state.setContent(data);
+  state.setValue(data);
 };
 
 on.input.placeholder = function() {
