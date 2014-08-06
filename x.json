@@ -1933,7 +1933,7 @@
       "title": "Rotate",
       "ns": "transform",
       "name": "rotate",
-      "fn": "output = function() {\n  cb( {\n    transform: transform.rotate(phi, theta, psi)\n  });\n  done();\n};\n"
+      "fn": "output = function() {\n  cb( {\n    transform: transform.rotate(input.phi, input.theta, input.psi)\n  });\n  done();\n};\n"
     },
     {
       "ports": {
