@@ -33,7 +33,7 @@ on.input.wrap = function() {
 };
 
 on.input.cols = function() {
-  state.setCols(data);
+  state.setColumns(data);
 };
 
 on.input.rows = function() {
