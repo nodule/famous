@@ -8,7 +8,7 @@
   },
   "ports": {
     "input": {
-       "type": {
+       "event": {
          "type": "string",
          "title": "Event Type",
           "enum": [

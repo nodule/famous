@@ -1311,7 +1311,7 @@
     {
       "ports": {
         "input": {
-          "type": {
+          "event": {
             "type": "string",
             "title": "Event Type",
             "enum": [
@@ -1373,7 +1373,7 @@
       "title": "On",
       "ns": "surface",
       "name": "on",
-      "fn": "output = function(cb) {\n\n  input.surface.on(input.type, function() {\n    cb({ event: {} });\n  }.bind(input.surface));\n\n  cb({ surface: input.surface });\n};\n"
+      "fn": "output = function(cb) {\n  console.log('SO!', input, cb, output, data);\n  input.surface.on(input.event, function() {\n    cb({ event: {} });\n  }.bind(input.surface));\n\n  cb({ surface: input.surface });\n};\n"
     },
     {
       "ports": {

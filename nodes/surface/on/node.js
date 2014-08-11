@@ -1,6 +1,6 @@
 output = function(cb) {
-
-  input.surface.on(input.type, function() {
+  console.log('SO!', input, cb, output, data);
+  input.surface.on(input.event, function() {
     cb({ event: {} });
   }.bind(input.surface));
 
