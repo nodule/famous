@@ -1,6 +1,6 @@
 output = function() {
   cb( {
-    transform: transform.rotate(input.phi, input.theta, input.psi)
+    transform: famous.core.Transform.rotate(input.phi, input.theta, input.psi)
   });
   done();
 };

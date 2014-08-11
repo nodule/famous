@@ -1,0 +1,64 @@
+{
+  "name": "on",
+  "ns": "surface",
+  "async": true,
+  "title": "On",
+  "description": "Add an EventHandler to a Surface",
+  "phrases": {
+    "active": "Adding event handler"
+  },
+  "ports": {
+    "input": {
+       "type": {
+         "type": "string",
+         "async": true,
+         "title": "Event Type",
+          "enum": [
+            "click",
+            "dblclick",
+            "mousedown",
+            "mouseup",
+            "mouseover",
+            "mousemove",
+            "mouseout",
+            "dragstart",
+            "drag",
+            "dragenter",
+            "dragleave",
+            "dragover",
+            "drop",
+            "dragend",
+            "keydown",
+            "keypress",
+            "keyup",
+            "pointerdown",
+            "pointerup",
+            "pointercancel",
+            "pointermove",
+            "pointerover",
+            "pointerout",
+            "pointerenter",
+            "pointerleave",
+            "gotpointercapture",
+            "lostpointercapture",
+            "select",
+            "change",
+            "submit",
+            "reset",
+            "focus",
+            "blur"
+          ]
+       },
+       "surface": {
+         "type": "Surface",
+         "title": "Surface"
+       }
+    },
+    "output": {
+      "surface": {
+        "type": "Surface",
+        "title": "Surface"
+      }
+    }
+  }
+}

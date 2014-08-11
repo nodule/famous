@@ -1311,6 +1311,71 @@
     {
       "ports": {
         "input": {
+          "type": {
+            "type": "string",
+            "async": true,
+            "title": "Event Type",
+            "enum": [
+              "click",
+              "dblclick",
+              "mousedown",
+              "mouseup",
+              "mouseover",
+              "mousemove",
+              "mouseout",
+              "dragstart",
+              "drag",
+              "dragenter",
+              "dragleave",
+              "dragover",
+              "drop",
+              "dragend",
+              "keydown",
+              "keypress",
+              "keyup",
+              "pointerdown",
+              "pointerup",
+              "pointercancel",
+              "pointermove",
+              "pointerover",
+              "pointerout",
+              "pointerenter",
+              "pointerleave",
+              "gotpointercapture",
+              "lostpointercapture",
+              "select",
+              "change",
+              "submit",
+              "reset",
+              "focus",
+              "blur"
+            ]
+          },
+          "surface": {
+            "type": "Surface",
+            "title": "Surface"
+          }
+        },
+        "output": {
+          "surface": {
+            "type": "Surface",
+            "title": "Surface"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Adding event handler"
+      },
+      "description": "Add an EventHandler to a Surface",
+      "title": "On",
+      "async": true,
+      "ns": "surface",
+      "name": "on",
+      "fn": "output = function() {\n\n  input.surface.on(input.type, function(ev) {\n    // probably there is no ev..\n     output({ event: ev });\n  });\n\n  output({ surface: input.surface });\n  done();\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
           "size": {
             "type": "array",
             "title": "Size",
@@ -1924,7 +1989,7 @@
         }
       },
       "require": {
-        "famo.us/core/Transform": "0.x.x"
+        "famous": "0.x.x"
       },
       "phrases": {
         "active": "Rotate"
@@ -1933,7 +1998,7 @@
       "title": "Rotate",
       "ns": "transform",
       "name": "rotate",
-      "fn": "output = function() {\n  cb( {\n    transform: transform.rotate(input.phi, input.theta, input.psi)\n  });\n  done();\n};\n"
+      "fn": "output = function() {\n  cb( {\n    transform: famous.core.Transform.rotate(input.phi, input.theta, input.psi)\n  });\n  done();\n};\n"
     },
     {
       "ports": {
