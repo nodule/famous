@@ -1,4 +1,4 @@
-output = function() {
+output = function(cb) {
 
   input.surface.on(input.type, function() {
     cb({ event: {} });
