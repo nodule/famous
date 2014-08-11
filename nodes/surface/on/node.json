@@ -1,7 +1,6 @@
 {
   "name": "on",
   "ns": "surface",
-  "async": true,
   "title": "On",
   "description": "Add an EventHandler to a Surface",
   "phrases": {
@@ -11,7 +10,6 @@
     "input": {
        "type": {
          "type": "string",
-         "async": true,
          "title": "Event Type",
           "enum": [
             "click",
