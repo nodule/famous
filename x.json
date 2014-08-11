@@ -1373,7 +1373,7 @@
       "title": "On",
       "ns": "surface",
       "name": "on",
-      "fn": "output = function() {\n\n  input.surface.on(input.type, function() {\n     output({ event: {} });\n  }.bind(input.surface));\n\n  output({ surface: input.surface });\n  done();\n};\n"
+      "fn": "output = function() {\n\n  input.surface.on(input.type, function() {\n    cb({ event: {} });\n  }.bind(input.surface));\n\n  cb({ surface: input.surface });\n  done();\n};\n"
     },
     {
       "ports": {

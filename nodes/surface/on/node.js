@@ -1,9 +1,9 @@
 output = function() {
 
   input.surface.on(input.type, function() {
-     output({ event: {} });
+    cb({ event: {} });
   }.bind(input.surface));
 
-  output({ surface: input.surface });
+  cb({ surface: input.surface });
   done();
 };
