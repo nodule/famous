@@ -1373,7 +1373,7 @@
       "title": "On",
       "ns": "surface",
       "name": "on",
-      "fn": "output = function() {\n\n  input.surface.on(input.type, function(ev) {\n    // probably there is no ev..\n     output({ event: ev });\n  });\n\n  output({ surface: input.surface });\n  done();\n};\n"
+      "fn": "output = function() {\n\n  input.surface.on(input.type, function(ev) {\n    // probably there is no ev..\n     output({ event: {} });\n  });\n\n  output({ surface: input.surface });\n  done();\n};\n"
     },
     {
       "ports": {
