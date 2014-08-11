@@ -1,7 +1,6 @@
 output = function() {
 
-  input.surface.on(input.type, function(ev) {
-    // probably there is no ev..
+  input.surface.on(input.type, function() {
      output({ event: {} });
   });
 
