@@ -1351,7 +1351,7 @@
             ]
           },
           "surface": {
-            "type": "object",
+            "type": "Surface",
             "title": "Surface"
           }
         },
