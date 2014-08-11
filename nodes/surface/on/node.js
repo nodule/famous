@@ -5,5 +5,4 @@ output = function(cb) {
   }.bind(input.surface));
 
   cb({ surface: input.surface });
-  done();
 };
