@@ -1,0 +1,47 @@
+{
+  "name": "core",
+  "ns": "surface",
+  "async": true,
+  "title": "Core Surface",
+  "description": "A base class for viewable content and event\n targets inside a Famo.us application, containing a renderable document\n fragment. Like an HTML div, it can accept internal markup,\n properties, classes, and handle events.",
+  "phrases": {
+    "active": "Adding core surface"
+  },
+  "require": {
+    "famous": "0.x.x"
+  },
+  "ports": {
+    "input": {
+       "size": {
+         "type": "array",
+         "title": "Size",
+         "description": "[width, height] in pixels",
+         "async": true
+       },
+       "classes": {
+         "type": "array",
+         "title": "Classes",
+         "description": "CSS classes to set on inner content",
+         "async": true
+       },
+       "attributes": {
+         "type": "object",
+         "title": "Properties",
+         "description": "string dictionary of HTML attributes to set on target div",
+         "async": true
+       },
+       "content": {
+         "type": "string",
+         "title": "Content",
+         "description": "inner (HTML) content of surface",
+         "async": true
+       }
+    },
+    "output": {
+      "surface": {
+        "type": "ContainerSurface",
+        "title": "Surface"
+      }
+    }
+  }
+}

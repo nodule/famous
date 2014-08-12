@@ -1146,6 +1146,54 @@
             "type": "array",
             "title": "Size",
             "description": "[width, height] in pixels",
+            "async": true
+          },
+          "classes": {
+            "type": "array",
+            "title": "Classes",
+            "description": "CSS classes to set on inner content",
+            "async": true
+          },
+          "attributes": {
+            "type": "object",
+            "title": "Properties",
+            "description": "string dictionary of HTML attributes to set on target div",
+            "async": true
+          },
+          "content": {
+            "type": "string",
+            "title": "Content",
+            "description": "inner (HTML) content of surface",
+            "async": true
+          }
+        },
+        "output": {
+          "surface": {
+            "type": "ContainerSurface",
+            "title": "Surface"
+          }
+        }
+      },
+      "require": {
+        "famous": "0.x.x"
+      },
+      "phrases": {
+        "active": "Adding core surface"
+      },
+      "description": "A base class for viewable content and event\n targets inside a Famo.us application, containing a renderable document\n fragment. Like an HTML div, it can accept internal markup,\n properties, classes, and handle events.",
+      "title": "Core Surface",
+      "async": true,
+      "ns": "surface",
+      "name": "core",
+      "fn": "state = new famous.core.Surface({});\n\non.input.classes = function() {\n  state.setClasses(data);\n};\n\non.input.attributes = function() {\n  state.setProperties(data);\n};\n\non.input.size = function() {\n  state.setSize(data);\n};\n\non.input.content = function() {\n  state.setContent(data);\n};\n\n\noutput = { surface: state };\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "size": {
+            "type": "array",
+            "title": "Size",
+            "description": "[width, height] in pixels",
             "items": {
               "type": "number"
             },
