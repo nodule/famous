@@ -6,3 +6,4 @@ output = function(cb) {
 
   cb({ surface: input.surface });
 };
+console.log('ON LOADED', output);
