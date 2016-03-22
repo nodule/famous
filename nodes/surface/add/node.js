@@ -1,5 +1,5 @@
-state = input.container;
+state = $.container;
 
 on.input.renderable = function() {
-  output({ render_node: state.add(data) });
+  output({ render_node: $.create(state.add($.renderable)) });
 };

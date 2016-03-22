@@ -1,20 +1,20 @@
 state = new famous.core.Surface({});
 
 on.input.classes = function() {
-  state.setClasses(data);
+  state.setClasses($.classes);
 };
 
 on.input.attributes = function() {
-  state.setProperties(data);
+  state.setProperties($.attributes);
 };
 
 on.input.size = function() {
-  state.setSize(data);
+  state.setSize($.size);
 };
 
 on.input.content = function() {
-  state.setContent(data);
+  state.setContent($.content);
 };
 
 
-output = { surface: state };
+output = { surface: $.create(state) };

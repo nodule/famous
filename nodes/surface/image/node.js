@@ -25,22 +25,22 @@
  */
 state = new famous.surfaces.ImageSurface({});
 on.start = function() {
-  output( { surface: state } );
+  output( { surface: $.create(state) } );
 };
 on.input.attr = function() {
-  state.setProperties(data);
+  state.setProperties($.attr);
 };
 
 on.input.classes = function() {
-  state.setClasses(data);
+  state.setClasses($.classes);
 };
 
 on.input.size = function() {
-  state.setSize(data);
+  state.setSize($.size);
 };
 
 on.input.image_url = function() {
-  state.setContent(data);
+  state.setContent($.image_url);
 };
 
-output = { surface: state };
+output = { surface: $.create(state) };

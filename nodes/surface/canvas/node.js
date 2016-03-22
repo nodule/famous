@@ -1,2 +1,2 @@
-state = new famous.surfaces.CanvasSurface(input.options);
-output = { surface: state };
+state = new famous.surfaces.CanvasSurface($.options);
+output = { surface: $.create(state) };

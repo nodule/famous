@@ -1,4 +1,4 @@
 on.input.size = function() {
-  input.context.setSize(data);
-  output( { context: input.context });
+  $.context.setSize($.size);
+  output( { context: $.get('context') });
 };

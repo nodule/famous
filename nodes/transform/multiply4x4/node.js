@@ -1,9 +1,7 @@
 output = function() {
-
   cb({
-    out: transform.multiply4x4(input.transformA, input.transformB);
+    out: $.create(transform.multiply4x4($.transformA, $.transformB))
   });
 
   done();
-
 };

@@ -1,6 +1,6 @@
 output = function() {
   cb({
-    out: transform.notEquals(input.transformA, input.transformB)
+    out: $.create(transform.notEquals($.transformA, $.transformB))
   });
   done();
 };

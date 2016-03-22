@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    transform: transform.build(input.spec)
+  cb({
+    transform: $.create(transform.build($.spec))
   });
   done();
 };

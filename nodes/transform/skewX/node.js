@@ -1,6 +1,6 @@
 output = function() {
   cb( {
-    transform: transform.skewX(input.angle)
+    transform: $.create(transform.skewX($.angle))
   });
   done();
 };

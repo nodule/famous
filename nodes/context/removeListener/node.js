@@ -1,6 +1,12 @@
 on.input.type = function() {
-  output( { event_handler: input.context.removeListener(data), context: input.context })
+  output({
+    event_handler: $.create($.context.removeListener($.type)),
+    context: $.get('context')
+  })
 };
 on.input.handler = function() {
-  output( { : input.context.removeListener(data), context: input.context })
+  output({
+    event_handler : $.create($.context.removeListener($.handler)),
+    context: $.get('context')
+   })
 };

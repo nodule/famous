@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    transform: famous.core.Transform.rotate(input.phi, input.theta, input.psi)
+  cb({
+    transform: $.create(famous.core.Transform.rotate($.phi, $.theta, $.psi))
   });
   done();
 };

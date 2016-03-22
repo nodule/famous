@@ -1,6 +1,6 @@
 output = function() {
   output( {
-    transform: transform.thenMove(input.transform, input.t)
+    transform: $.create(transform.thenMove($.transform, $.t))
   });
   done();
 };

@@ -1,5 +1,5 @@
 output = function() {
-  cb( {
-    out: transform.normalizeRotation(input.rotation)
+  cb({
+    out: $.create(transform.normalizeRotation($.rotation))
   });
 };

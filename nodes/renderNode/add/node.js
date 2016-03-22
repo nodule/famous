@@ -1,3 +1,3 @@
 on.input.obj = function() {
-  output( { child_node: input.render_node.add(data) })
+  output( { child_node: $.create($.render_node.add($.obj)) })
 };

@@ -1,6 +1,12 @@
 on.input.type = function() {
-  output( { event_handler: input.context.on(data), context: input.context })
+  output({
+    event_handler: $.create($.context.on($.type)),
+    context: $.get('context')
+  })
 };
-on.input.object)} = function() {
-  output( { : input.context.on(data), context: input.context })
+on.input.object = function() {
+  output({
+    event_handler: $.create($.context.on($.object)),
+    context: $.get('context')
+  })
 };

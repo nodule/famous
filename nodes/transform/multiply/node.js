@@ -1,8 +1,6 @@
 output = function() {
-
   cb({
-    out: transform.multiply(input.transformA, input.transformB)
+    out: $.create(transform.multiply($.transformA, $.transformB))
   });
   done();
-
 };

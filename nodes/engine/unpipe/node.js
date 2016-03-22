@@ -1,3 +1,3 @@
 on.input.target = function() {
-  output( { event_handler: famous.core.Engine.unpipe(data) });
+  output( { event_handler: $.create(famous.core.Engine.unpipe($.target)) });
 };

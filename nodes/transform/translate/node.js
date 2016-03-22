@@ -1,6 +1,6 @@
 output = function() {
   cb( {
-    transform: transform.translate(input.x, input.y, input.z)
+    transform: $.create(transform.translate($.x, $.y, $.z))
   });
   done();
 };

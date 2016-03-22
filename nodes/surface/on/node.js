@@ -1,8 +1,8 @@
-output = function(cb) {
-  input.surface.on(input.event, function() {
-    cb({ event: {} });
-  }.bind(input.surface));
+output = function() {
+  $.surface.on($.event, function(ev) {
+    cb({ event: $.create(ev) });
+  }.bind($.surface));
 
-  cb({ surface: input.surface });
+  cb({ surface: $.get('surface') });
   done();
 };

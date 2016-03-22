@@ -1,4 +1,4 @@
 on.input.size = function() {
-  input.modifier.sizeFrom(data);
-  output( { modifier: input.modifier });
+  $.modifier.sizeFrom($.size);
+  output( { modifier: $.get('modifier') });
 };

@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    transform: transform.perspective(input.focusZ)
+  cb({
+    transform: $.create(transform.perspective($.focusZ))
   });
   done();
 };

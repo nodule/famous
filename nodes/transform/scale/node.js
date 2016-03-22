@@ -1,6 +1,6 @@
 output = function() {
   cb( {
-    transform: transform.scale(input.x, input.y, input.z)
+    transform: $.create(transform.scale($.x, $.y, $.z))
   });
   done();
 };

@@ -1,8 +1,8 @@
 on.start = function() {
   state = famous.core.Engine.createContext();
-  output( { context: state });
+  output( { context: $.create(state) });
 };
 
 on.input.el = function() {
-  state.migrate(data);
+  state.migrate($.el);
 };

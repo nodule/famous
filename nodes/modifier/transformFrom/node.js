@@ -1,4 +1,4 @@
 on.input.transform = function() {
-  input.modifier.transformFrom(data);
-  output( { modifier: input.modifier });
+  $.modifier.transformFrom($.transform);
+  output( { modifier: $.get('modifier') });
 };

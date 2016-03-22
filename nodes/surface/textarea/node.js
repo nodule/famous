@@ -1,43 +1,43 @@
 state = new famous.surfaces.TextareaSurface({});
 
 on.input.size = function() {
-  state.setSize(data);
+  state.setSize($.size);
 };
 
 on.input.classes = function() {
-  state.setClasses(data);
+  state.setClasses($.classes);
 };
 
 on.input.attributes = function() {
-  state.setProperties(data);
+  state.setProperties($.attributes);
 };
 
 on.input.content = function() {
-  state.setContent(data);
+  state.setContent($.content);
 };
 
 on.input.name = function() {
-  state.setName(data);
+  state.setName($.name);
 };
 
 on.input.value = function() {
-  state.setValue(data);
+  state.setValue($.value);
 };
 
 on.input.placeholder = function() {
-  state.setPlaceholder(data);
+  state.setPlaceholder($.placeholder);
 };
 
 on.input.wrap = function() {
-  state.setWrap(data);
+  state.setWrap($.wrap);
 };
 
 on.input.cols = function() {
-  state.setColumns(data);
+  state.setColumns($.cols);
 };
 
 on.input.rows = function() {
-  state.setRows(data);
+  state.setRows($.rows);
 };
 
 on.input.focus = function() {
@@ -49,5 +49,5 @@ on.input.blur = function() {
 };
 
 on.start = function() {
-  output( { surface: state } );
+  output( { surface: $.create(state) } );
 };

@@ -1,4 +1,4 @@
 on.input.container = function() {
-  input.context.migrate(data);
-  output( { context: input.context });
+  $.context.migrate($.container);
+  output( { context: $.get('context') });
 };

@@ -1,12 +1,12 @@
 on.input.perspective = function() {
-  input.context.setPerspective(data);
-  output( { context: input.context });
+  $.context.setPerspective($.perspective);
+  output({ context: $.get('context') });
 };
-on.input.[transition] = function() {
-  input.context.setPerspective(data);
-  output( { context: input.context });
+on.input.transition = function() {
+  $.context.setPerspective($.transition);
+  output({ context: $.get('context') });
 };
 on.input.callback = function() {
-  input.context.setPerspective(data);
-  output( { context: input.context });
+  $.context.setPerspective($.callback);
+  output({ context: $.get('context') });
 };

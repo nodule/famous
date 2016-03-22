@@ -1,6 +1,6 @@
 output = function() {
   cb( {
-    transform: transform.skew(input.phi, input.theta, input.psi)
+    transform: $.create(transform.skew($.phi, $.theta, $.psi))
   });
   done();
 };

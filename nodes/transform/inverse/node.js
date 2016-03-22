@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    transform: transform.inverse(input.transform)
+  cb({
+    transform: $.create(transform.inverse($.transform))
   });
   done();
 };

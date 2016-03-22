@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    out: transform.interpret(input.transform)
+  cb({
+    out: $.create(transform.interpret($.transform))
   });
   done();
 };

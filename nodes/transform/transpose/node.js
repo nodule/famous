@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    transform: transform.transpose(input.transform)
+  cb({
+    transform: $.write('transform', transform.transpose($.transform))
   });
   done();
 };

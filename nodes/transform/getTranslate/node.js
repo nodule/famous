@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    translate: transform.getTranslate(input.translate)
+  cb({
+    translate: $.create(transform.getTranslate($.translate))
   });
   done();
 };

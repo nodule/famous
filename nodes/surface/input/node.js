@@ -1,31 +1,31 @@
 state = new famous.surfaces.InputSurface({});
 
 on.input.name = function() {
-  state.setName(data);
+  state.setName($.name);
 };
 
 on.input.size = function() {
-  state.setSize(data);
+  state.setSize($.size);
 };
 
 on.input.attributes = function() {
-  state.setProperties (data);
+  state.setProperties($.attributes);
 };
 
 on.input.classes = function() {
-  state.setClasses(data);
+  state.setClasses($.classes);
 };
 
 on.input.type = function() {
-  state.setType(data);
+  state.setType($.type);
 };
 
 on.input.value = function() {
-  state.setValue(data);
+  state.setValue($.value);
 };
 
 on.input.placeholder = function() {
-  state.setPlaceholder(data);
+  state.setPlaceholder($.placeholder);
 };
 
 on.input.focus = function() {
@@ -37,5 +37,5 @@ on.input.blur = function() {
 };
 
 on.start = function() {
-  output({ surface: state });
+  output({ surface: $.create(state) });
 };

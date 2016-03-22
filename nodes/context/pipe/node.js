@@ -1,3 +1,6 @@
 on.input.target = function() {
-  output( { event_handler: input.context.pipe(data), context: input.context })
+  output({
+    event_handler: $.create($.context.pipe($.target)),
+    context: $.get('context')
+  })
 };

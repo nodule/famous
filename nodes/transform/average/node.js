@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    transform: transform.average(input.transform1, input.transform2)
+  cb({
+    transform: $.create(transform.average($.transform1, $.transform2))
   });
   done();
 };

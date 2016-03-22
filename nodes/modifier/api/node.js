@@ -1,21 +1,20 @@
 output = function() {
-
   var opts =  {
-    origin: input.origin
+    origin: $.origin
   };
 
-  if(input.transform) {
-    opts.transform = input.transform;
+  if($.transform) {
+    opts.transform = $.transform;
   } else {
     opts.transform = function() {
       cb( { animate: '' });
     };
   }
-  if(input.size) opts.size = input.size;
-  if(input.opacity) opts.opacity = input.opacity;
+  if($.size) opts.size = $.size;
+  if($.opacity) opts.opacity = $.opacity;
 
   cb( {
-    modifier: new famous.core.Modifier(opts)
+    modifier: $.create(new famous.core.Modifier(opts))
   });
 
   done();

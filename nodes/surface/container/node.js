@@ -1,16 +1,16 @@
 state = new famous.surfaces.ContainerSurface({});
 
 on.input.classes = function() {
-  state.setClasses(data);
+  state.setClasses($.classes);
 };
 
 on.input.attributes = function() {
-  state.setProperties(data);
+  state.setProperties($.attributes);
 };
 
 on.input.size = function() {
-  state.setSize(data);
+  state.setSize($.size);
 };
 
 
-output = { surface: state };
+output = { surface: $.create(state) };

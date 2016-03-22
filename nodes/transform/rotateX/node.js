@@ -1,6 +1,6 @@
 output = function() {
-  cb( {
-    transform: transform.rotateX(input.theta)
+  cb({
+    transform: $.create(transform.rotateX($.theta))
   });
   done();
 };

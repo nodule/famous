@@ -1,4 +1,6 @@
 output = function() {
-  cb( { event_handler: famous.core.Engine.removeListener(input.type, input.handler) })
+  cb({
+    event_handler: $.create(famous.core.Engine.removeListener($.type, $.handler))
+  })
   done();
 };

@@ -1,3 +1,3 @@
 on.input.key = function() {
-  output( { object: famous.core.Engine.getOptions(data) });
+  output( { object: $.create(famous.core.Engine.getOptions($.key)) });
 };
